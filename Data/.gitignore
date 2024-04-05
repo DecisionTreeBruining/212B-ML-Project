@@ -1,2 +1,5 @@
 #Ignore Kaggle Data
-kaggle*
+*.csv
+*.parquet
+*.gz
+*.rds
