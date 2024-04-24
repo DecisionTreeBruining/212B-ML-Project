@@ -3,3 +3,4 @@
 *.parquet
 *.gz
 *.rds
+*GoogleDrive
