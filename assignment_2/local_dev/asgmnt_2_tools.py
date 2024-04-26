@@ -19,3 +19,15 @@ def lazy_read_parquet(path):
             key = os.path.splitext(filename)[0] # key = filename
             lazy_frames_dict[key] = lazy_frame # Add lazyframe to dictionary
     return lazy_frames_dict
+
+def lazydict_to_parquet(lazydict):
+    """
+    Lazy read all parquet files in a folder.
+    ---
+    Args: 
+        lazydict: A dictionary of lazyframes
+    Return: 
+        None
+    """
+    for name, df in lazydict.items():
+        df.collect().write_parquet(f"{data_path}GoogleDrive/{name}.parquet")
