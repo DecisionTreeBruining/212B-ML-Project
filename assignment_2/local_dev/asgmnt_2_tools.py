@@ -1,5 +1,4 @@
-import polars as pl # Lazy Dataframe Manipulation 
-import pandas as pd # Dataframe
+import polars as pl # Lazy Dataframe Manipulation
 import os # Return File Names from a directory
 
 path_drive = "../../Data/GoogleDrive"
