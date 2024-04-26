@@ -4,3 +4,4 @@
 *.Rhistory
 *.vscode/
 *qc.log
+*__pycache__

@@ -1,8 +1,6 @@
 import polars as pl # Lazy Dataframe Manipulation
 import os # Return File Names from a directory
 
-path_drive = "../../Data/GoogleDrive"
-
 def lazy_read_parquet(path):
     """
     Lazy read all parquet files in a folder.
@@ -21,7 +19,7 @@ def lazy_read_parquet(path):
             lazy_frames_dict[key] = lazy_frame # Add lazyframe to dictionary
     return lazy_frames_dict
 
-def lazydict_to_parquet(lazydict):
+def lazydict_to_parquet(lazydict, drive_path):
     """
     Lazy read all parquet files in a folder.
     ---
@@ -31,4 +29,4 @@ def lazydict_to_parquet(lazydict):
         None
     """
     for name, df in lazydict.items():
-        df.collect().write_parquet(f"{path_drive}{name}.parquet")
+        df.collect().write_parquet(f"{drive_path}{name}.parquet")
