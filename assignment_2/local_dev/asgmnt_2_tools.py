@@ -1,4 +1,5 @@
 import polars as pl # Lazy Dataframe Manipulation
+import pickle
 import os # Return File Names from a directory
 
 def lazy_read_parquet(path):
@@ -30,3 +31,21 @@ def lazydict_to_parquet(lazydict, drive_path):
     """
     for name, df in lazydict.items():
         df.collect().write_parquet(f"{drive_path}{name}.parquet")
+
+def read_pickle_jar(path):
+    """
+    Read all pickle files in a folder and return a dictionary of objects.
+    
+    Args:
+        path (str): Relative or absolute path to the folder containing pickle files.
+        
+    Returns:
+        dict: A dictionary where each key is the filename (without extension) and the value is the loaded object.
+    """
+    pickle_rick = {}  # Dictionary to store the loaded objects
+    for filename in os.listdir(path):
+        if filename.endswith(".pkl"):  # Check for pickle files
+            file_path = os.path.join(path, filename)  # Construct full file path
+            with open(file_path, 'rb') as file:  # Open file for reading in binary mode
+                pickle_rick[os.path.splitext(filename)[0]] = pickle.load(file)  # Deserialize and store in dictionary
+    return pickle_rick
