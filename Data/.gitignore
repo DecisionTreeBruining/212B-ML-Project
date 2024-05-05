@@ -1,0 +1,6 @@
+#Ignore Kaggle Data
+*.csv
+*.parquet
+*.gz
+*.rds
+*GoogleDrive
