@@ -62,6 +62,18 @@ def dict_to_parquet(lazydict, drive_path):
     """
     for name, df in lazydict.items():
         df.collect().write_parquet(f"{drive_path}{name}.parquet")
+        
+def pd_dict_to_parquet(pd_dict, drive_path):
+    """
+    Lazy read all parquet files in a folder.
+    ---
+    Args: 
+        lazydict: A dictionary of lazyframes
+    Return: 
+        None
+    """
+    for name, df in pd_dict.items():
+        df.to_parquet(f"{drive_path}{name}.parquet")
 
 def pickle_to_dict(path):
     """
