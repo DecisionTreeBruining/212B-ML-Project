@@ -115,6 +115,8 @@ def encode_cvd_var(df):
     # Define the features and target
     X = df.drop('HadHeartDisease', axis=1)
     y = df['HadHeartDisease']
+    
+    y = df['HadHeartDisease'].map({'Yes': 1, 'No': 0})
 
     # data split
     X_train, X_test, y_train, y_test = train_test_split(X, y, 
@@ -167,9 +169,9 @@ def encode_cvd_var(df):
     X_test_encoded = preprocessor.transform(X_test)
 
     # fit another label encoder on y
-    y_label_encoder = OrdinalEncoder()
-    y_train_encoded = y_label_encoder.fit_transform(pd.DataFrame(y_train))
-    y_test_encoded = y_label_encoder.transform(pd.DataFrame(y_test))
+    # y_label_encoder = OneHotEncoder(drop=None)
+    # y_train_encoded = y_label_encoder.fit_transform(pd.DataFrame(y_train)).toarray()
+    # y_test_encoded = y_label_encoder.transform(pd.DataFrame(y_test)).toarray()
 
     # Handle sparse matrix if necessary
     if issparse(X_train_encoded):
@@ -179,11 +181,11 @@ def encode_cvd_var(df):
 
     # Convert the sparse matrix to DataFrame and specify column names
     X_columns = preprocessor.get_feature_names_out()
-    y_column = y_label_encoder.get_feature_names_out()
+    # y_column = y_label_encoder.get_feature_names_out()
     X_train_encoded = pd.DataFrame(X_train_encoded, columns=X_columns, index=X_train.index)
     X_test_encoded = pd.DataFrame(X_test_encoded, columns=X_columns, index=X_test.index)
-    y_train_encoded = pd.DataFrame(y_train_encoded, columns=y_column, index=y_train.index)
-    y_test_encoded = pd.DataFrame(y_test_encoded, columns=y_column, index=y_test.index)
+    y_train_encoded = pd.DataFrame(y_train)
+    y_test_encoded = pd.DataFrame(y_test)
     
     return X_train_encoded, X_test_encoded, y_train_encoded, y_test_encoded
 
