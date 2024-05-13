@@ -104,7 +104,7 @@ def process_dataset(name, lazy_dict, param_grid, save_pth):
     with open(f"{save_pth}{name}_MLPbaseline", 'wb') as file:
         pickle.dump(best_model, file)
 
-    logging.info(f"{name}Model saved to {model_path}")
+    logging.info(f"{name}Model saved to {save_pth}")
 
     return {
         "Dataset Name": name,
