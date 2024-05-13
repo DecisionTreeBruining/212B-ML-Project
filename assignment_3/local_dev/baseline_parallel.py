@@ -156,13 +156,13 @@ param_grid = {
     'power_t': [0.5],  # The exponent for inverse scaling learning rate
     'max_iter': [200],  # Maximum number of iterations
     'shuffle': [True],  # Whether to shuffle samples in each iteration
-    'random_state': [None],  # Random state for reproducibility, can set to a specific number
+    'random_state': [212],  # Random state for reproducibility, can set to a specific number
     'tol': [0.0001],  # Tolerance for the optimization
     'verbose': [False],  # Whether to print progress messages to stdout
     'warm_start': [False],  # Reuse solution of the previous call to fit as initialization
     'momentum': [0.9],  # Momentum for gradient descent update
     'nesterovs_momentum': [True],  # Whether to use Nesterov's momentum
-    'early_stopping': [False],  # Whether to use early stopping to terminate training
+    'early_stopping': [True],  # Whether to use early stopping to terminate training
     'validation_fraction': [0.1],  # Proportion of training data to set aside as validation set
     'beta_1': [0.9],  # Exponential decay rate for estimates of first moment vector in adam
     'beta_2': [0.999],  # Exponential decay rate for estimates of second moment vector in adam
