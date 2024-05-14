@@ -1,78 +1,308 @@
-2024-05-13 09:22:23,828 - INFO - Evaluating model: df_heart_drop_03_imp_MLPbaseline
-2024-05-13 09:22:53,928 - INFO - Evaluating model: df_heart_drop_03_imp_MLPbaseline
-2024-05-13 09:22:54,359 - INFO - Evaluating model: Over_Sample_1:1_threshold_03_MLPbaseline
-2024-05-13 09:22:55,024 - INFO - Evaluating model: Under_Sample_7:1_threshold_00_MLPbaseline
-2024-05-13 09:22:56,789 - INFO - Evaluating model: Under_Sample_2:1_threshold_40_MLPbaseline
-2024-05-13 09:22:57,883 - INFO - Evaluating model: Over_Sample_1:2_threshold_20_MLPbaseline
-2024-05-13 09:22:58,904 - INFO - Evaluating model: Over_Sample_1:2_threshold_05_MLPbaseline
-2024-05-13 09:22:59,845 - INFO - Evaluating model: Over_Sample_1:1_threshold_05_MLPbaseline
-2024-05-13 09:23:00,510 - INFO - Evaluating model: Under_Sample_2:1_threshold_00_MLPbaseline
-2024-05-13 09:23:01,076 - INFO - Evaluating model: Over_Sample_1:5_threshold_01_MLPbaseline
-2024-05-13 09:23:02,651 - INFO - Evaluating model: Over_Sample_1:3_threshold_20_MLPbaseline
-2024-05-13 09:23:04,094 - INFO - Evaluating model: Over_Sample_1:3_threshold_00_MLPbaseline
-2024-05-13 09:23:04,887 - INFO - Evaluating model: Under_Sample_3:1_threshold_20_MLPbaseline
-2024-05-13 09:23:06,375 - INFO - Evaluating model: Over_Sample_1:5_threshold_10_MLPbaseline
-2024-05-13 09:23:08,214 - INFO - Evaluating model: Over_Sample_1:3_threshold_10_MLPbaseline
-2024-05-13 09:23:09,679 - INFO - Evaluating model: df_heart_drop_20_imp_MLPbaseline
-2024-05-13 09:23:10,195 - INFO - Evaluating model: Over_Sample_1:2_threshold_10_MLPbaseline
-2024-05-13 09:23:11,152 - INFO - Evaluating model: Under_Sample_7:1_threshold_05_MLPbaseline
-2024-05-13 09:23:13,636 - INFO - Evaluating model: Over_Sample_1:7_threshold_10_MLPbaseline
-2024-05-13 09:23:16,585 - INFO - Evaluating model: Under_Sample_3:1_threshold_01_MLPbaseline
-2024-05-13 09:23:17,579 - INFO - Evaluating model: Over_Sample_1:3_threshold_40_MLPbaseline
-2024-05-13 09:23:19,003 - INFO - Evaluating model: Over_Sample_1:7_threshold_40_MLPbaseline
-2024-05-13 09:23:21,566 - INFO - Evaluating model: Under_Sample_1:1_threshold_03_MLPbaseline
-2024-05-13 09:23:22,239 - INFO - Evaluating model: Over_Sample_1:3_threshold_05_MLPbaseline
-2024-05-13 09:23:23,396 - INFO - Evaluating model: Under_Sample_3:1_threshold_03_MLPbaseline
-2024-05-13 09:23:24,511 - INFO - Evaluating model: Over_Sample_1:7_threshold_05_MLPbaseline
-2024-05-13 09:23:26,966 - INFO - Evaluating model: Over_Sample_1:5_threshold_03_MLPbaseline
-2024-05-13 09:23:28,724 - INFO - Evaluating model: Over_Sample_1:2_threshold_00_MLPbaseline
-2024-05-13 09:23:29,288 - INFO - Evaluating model: Over_Sample_1:2_threshold_03_MLPbaseline
-2024-05-13 09:23:30,170 - INFO - Evaluating model: Under_Sample_7:1_threshold_03_MLPbaseline
-2024-05-13 09:23:32,587 - INFO - Evaluating model: Over_Sample_1:2_threshold_40_MLPbaseline
-2024-05-13 09:23:33,593 - INFO - Evaluating model: df_heart_drop_01_imp_MLPbaseline
-2024-05-13 09:23:34,029 - INFO - Evaluating model: Over_Sample_1:5_threshold_20_MLPbaseline
-2024-05-13 09:23:36,029 - INFO - Evaluating model: Under_Sample_1:1_threshold_05_MLPbaseline
-2024-05-13 09:23:36,718 - INFO - Evaluating model: Under_Sample_7:1_threshold_01_MLPbaseline
-2024-05-13 09:23:38,780 - INFO - Evaluating model: Under_Sample_1:1_threshold_10_MLPbaseline
-2024-05-13 09:23:39,533 - INFO - Evaluating model: Over_Sample_1:5_threshold_40_MLPbaseline
-2024-05-13 09:23:41,594 - INFO - Evaluating model: Under_Sample_5:1_threshold_00_MLPbaseline
-2024-05-13 09:23:42,646 - INFO - Evaluating model: Under_Sample_2:1_threshold_20_MLPbaseline
-2024-05-13 09:23:43,695 - INFO - Evaluating model: Over_Sample_1:7_threshold_00_MLPbaseline
-2024-05-13 09:23:45,174 - INFO - Evaluating model: df_heart_drop_00_imp_MLPbaseline
-2024-05-13 09:23:45,511 - INFO - Evaluating model: Under_Sample_7:1_threshold_20_MLPbaseline
-2024-05-13 09:23:48,080 - INFO - Evaluating model: Over_Sample_1:1_threshold_40_MLPbaseline
-2024-05-13 09:23:48,831 - INFO - Evaluating model: Under_Sample_5:1_threshold_01_MLPbaseline
-2024-05-13 09:23:50,381 - INFO - Evaluating model: Over_Sample_1:1_threshold_00_MLPbaseline
-2024-05-13 09:23:50,787 - INFO - Evaluating model: Over_Sample_1:7_threshold_03_MLPbaseline
-2024-05-13 09:23:53,538 - INFO - Evaluating model: Under_Sample_5:1_threshold_03_MLPbaseline
-2024-05-13 09:23:55,296 - INFO - Evaluating model: Under_Sample_2:1_threshold_05_MLPbaseline
-2024-05-13 09:23:56,191 - INFO - Evaluating model: Under_Sample_1:1_threshold_00_MLPbaseline
-2024-05-13 09:23:56,629 - INFO - Evaluating model: df_heart_drop_40_imp_MLPbaseline
-2024-05-13 09:23:57,248 - INFO - Evaluating model: Under_Sample_5:1_threshold_10_MLPbaseline
-2024-05-13 09:23:59,100 - INFO - Evaluating model: Over_Sample_1:1_threshold_20_MLPbaseline
-2024-05-13 09:23:59,933 - INFO - Evaluating model: Over_Sample_1:3_threshold_03_MLPbaseline
-2024-05-13 09:24:01,078 - INFO - Evaluating model: Under_Sample_7:1_threshold_10_MLPbaseline
-2024-05-13 09:24:03,530 - INFO - Evaluating model: df_heart_drop_10_imp_MLPbaseline
-2024-05-13 09:24:04,046 - INFO - Evaluating model: Under_Sample_1:1_threshold_01_MLPbaseline
-2024-05-13 09:24:04,632 - INFO - Evaluating model: Over_Sample_1:5_threshold_00_MLPbaseline
-2024-05-13 09:24:05,701 - INFO - Evaluating model: Over_Sample_1:1_threshold_01_MLPbaseline
-2024-05-13 09:24:06,387 - INFO - Evaluating model: Under_Sample_3:1_threshold_05_MLPbaseline
-2024-05-13 09:24:07,623 - INFO - Evaluating model: Over_Sample_1:7_threshold_01_MLPbaseline
-2024-05-13 09:24:09,613 - INFO - Evaluating model: Under_Sample_2:1_threshold_03_MLPbaseline
-2024-05-13 09:24:10,617 - INFO - Evaluating model: Under_Sample_3:1_threshold_10_MLPbaseline
-2024-05-13 09:24:11,944 - INFO - Evaluating model: Over_Sample_1:2_threshold_01_MLPbaseline
-2024-05-13 09:24:12,759 - INFO - Evaluating model: Under_Sample_3:1_threshold_40_MLPbaseline
-2024-05-13 09:24:14,168 - INFO - Evaluating model: df_heart_drop_05_imp_MLPbaseline
-2024-05-13 09:24:14,720 - INFO - Evaluating model: Over_Sample_1:7_threshold_20_MLPbaseline
-2024-05-13 09:24:17,369 - INFO - Evaluating model: Under_Sample_1:1_threshold_40_MLPbaseline
-2024-05-13 09:24:18,165 - INFO - Evaluating model: Over_Sample_1:3_threshold_01_MLPbaseline
-2024-05-13 09:24:19,197 - INFO - Evaluating model: Under_Sample_2:1_threshold_10_MLPbaseline
-2024-05-13 09:24:20,169 - INFO - Evaluating model: Under_Sample_2:1_threshold_01_MLPbaseline
-2024-05-13 09:24:20,956 - INFO - Evaluating model: Under_Sample_5:1_threshold_40_MLPbaseline
-2024-05-13 09:24:23,040 - INFO - Evaluating model: Under_Sample_3:1_threshold_00_MLPbaseline
-2024-05-13 09:24:23,757 - INFO - Evaluating model: Under_Sample_5:1_threshold_05_MLPbaseline
-2024-05-13 09:24:25,613 - INFO - Evaluating model: Under_Sample_5:1_threshold_20_MLPbaseline
-2024-05-13 09:24:27,666 - INFO - Evaluating model: Over_Sample_1:1_threshold_10_MLPbaseline
-2024-05-13 09:24:28,412 - INFO - Evaluating model: Over_Sample_1:5_threshold_05_MLPbaseline
-2024-05-13 09:24:30,276 - INFO - Evaluating model: Under_Sample_1:1_threshold_20_MLPbaseline
-2024-05-13 09:24:31,021 - INFO - Evaluating model: Under_Sample_7:1_threshold_40_MLPbaseline
+2024-05-13 10:05:20,018 - INFO - Processing dataset: df_heart_drop_05_imp
+2024-05-13 10:05:21,142 - INFO - Processing dataset: df_heart_drop_20_imp
+2024-05-13 10:05:22,388 - INFO - Processing dataset: Under_Sample_1:1_threshold_05
+2024-05-13 10:05:22,497 - INFO - Processing dataset: Under_Sample_1:1_threshold_01
+2024-05-13 10:05:24,538 - INFO - Processing dataset: Over_Sample_1:2_threshold_10
+2024-05-13 10:05:24,651 - INFO - Processing dataset: Under_Sample_2:1_threshold_40
+2024-05-13 10:05:24,825 - INFO - Processing dataset: Under_Sample_2:1_threshold_10
+2024-05-13 10:05:28,100 - INFO - Processing dataset: Under_Sample_7:1_threshold_00
+2024-05-13 10:05:28,477 - INFO - Processing dataset: Over_Sample_1:3_threshold_40
+2024-05-13 10:05:28,625 - INFO - Processing dataset: Over_Sample_1:5_threshold_05
+2024-05-13 10:05:30,170 - INFO - Processing dataset: Under_Sample_7:1_threshold_10
+2024-05-13 10:05:30,892 - INFO - Processing dataset: Over_Sample_1:7_threshold_05
+2024-05-13 10:05:32,302 - INFO - Processing dataset: Under_Sample_7:1_threshold_40
+2024-05-13 10:05:32,984 - INFO - Processing dataset: Over_Sample_1:7_threshold_40
+2024-05-13 10:12:32,898 - INFO - df_heart_drop_05_impGridSearch completed.
+2024-05-13 10:12:34,703 - INFO - df_heart_drop_05_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 10:12:51,968 - INFO - Processing dataset: Over_Sample_1:3_threshold_10
+2024-05-13 10:12:55,562 - INFO - df_heart_drop_20_impGridSearch completed.
+2024-05-13 10:12:57,620 - INFO - df_heart_drop_20_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 10:13:09,305 - INFO - Processing dataset: Over_Sample_1:1_threshold_05
+2024-05-13 10:45:47,719 - INFO - Under_Sample_1:1_threshold_01GridSearch completed.
+2024-05-13 10:45:49,134 - INFO - Under_Sample_1:1_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 10:46:04,036 - INFO - Processing dataset: Under_Sample_3:1_threshold_10
+2024-05-13 10:52:56,555 - INFO - Under_Sample_1:1_threshold_05GridSearch completed.
+2024-05-13 10:52:58,159 - INFO - Under_Sample_1:1_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 10:53:07,616 - INFO - Processing dataset: Under_Sample_3:1_threshold_05
+2024-05-13 10:53:35,766 - INFO - Over_Sample_1:1_threshold_05GridSearch completed.
+2024-05-13 10:53:37,160 - INFO - Over_Sample_1:1_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 10:53:45,910 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-13 11:22:13,244 - INFO - Over_Sample_1:2_threshold_10GridSearch completed.
+2024-05-13 11:22:14,529 - INFO - Over_Sample_1:2_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 11:22:46,625 - INFO - Processing dataset: Over_Sample_1:7_threshold_01
+2024-05-13 11:27:05,776 - INFO - Under_Sample_2:1_threshold_10GridSearch completed.
+2024-05-13 11:27:07,657 - INFO - Under_Sample_2:1_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 11:27:34,457 - INFO - Processing dataset: Over_Sample_1:7_threshold_10
+2024-05-13 11:40:10,228 - INFO - Over_Sample_1:3_threshold_10GridSearch completed.
+2024-05-13 11:40:11,662 - INFO - Over_Sample_1:3_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 11:40:14,203 - INFO - Processing dataset: Over_Sample_1:1_threshold_00
+2024-05-13 11:43:59,615 - INFO - Under_Sample_2:1_threshold_40GridSearch completed.
+2024-05-13 11:44:01,182 - INFO - Under_Sample_2:1_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 11:44:02,507 - INFO - Completed processing for Under_Sample_2:1_threshold_40
+2024-05-13 11:44:02,516 - INFO - Completed processing for df_heart_drop_05_imp
+2024-05-13 11:44:16,467 - INFO - Processing dataset: Under_Sample_5:1_threshold_00
+2024-05-13 11:51:46,951 - INFO - Under_Sample_1:1_threshold_20GridSearch completed.
+2024-05-13 11:51:47,959 - INFO - Under_Sample_1:1_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 11:52:02,021 - INFO - Processing dataset: Over_Sample_1:3_threshold_01
+2024-05-13 11:58:15,867 - INFO - Over_Sample_1:3_threshold_40GridSearch completed.
+2024-05-13 11:58:17,394 - INFO - Over_Sample_1:3_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 11:58:27,800 - INFO - Processing dataset: Over_Sample_1:2_threshold_20
+2024-05-13 12:07:14,311 - INFO - Over_Sample_1:5_threshold_05GridSearch completed.
+2024-05-13 12:07:15,321 - INFO - Over_Sample_1:5_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:07:40,359 - INFO - Processing dataset: Under_Sample_5:1_threshold_05
+2024-05-13 12:17:22,240 - INFO - Under_Sample_7:1_threshold_00GridSearch completed.
+2024-05-13 12:17:23,430 - INFO - Under_Sample_7:1_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:17:39,379 - INFO - Over_Sample_1:1_threshold_00GridSearch completed.
+2024-05-13 12:17:40,223 - INFO - Over_Sample_1:1_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:17:52,313 - INFO - Processing dataset: Under_Sample_1:1_threshold_40
+2024-05-13 12:17:53,304 - INFO - Processing dataset: Under_Sample_5:1_threshold_20
+2024-05-13 12:33:01,653 - INFO - Under_Sample_3:1_threshold_10GridSearch completed.
+2024-05-13 12:33:02,844 - INFO - Under_Sample_3:1_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:33:09,393 - INFO - Processing dataset: Over_Sample_1:1_threshold_10
+2024-05-13 12:36:33,477 - INFO - Under_Sample_7:1_threshold_40GridSearch completed.
+2024-05-13 12:36:35,385 - INFO - Under_Sample_7:1_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:36:40,827 - INFO - Processing dataset: df_heart_drop_00_imp
+2024-05-13 12:42:13,282 - INFO - df_heart_drop_00_impGridSearch completed.
+2024-05-13 12:42:13,806 - INFO - df_heart_drop_00_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:42:18,275 - INFO - Processing dataset: Under_Sample_3:1_threshold_00
+2024-05-13 12:48:51,557 - INFO - Under_Sample_3:1_threshold_05GridSearch completed.
+2024-05-13 12:48:53,355 - INFO - Under_Sample_3:1_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:48:59,486 - INFO - Processing dataset: Over_Sample_1:1_threshold_20
+2024-05-13 12:53:24,585 - INFO - Under_Sample_7:1_threshold_10GridSearch completed.
+2024-05-13 12:53:26,208 - INFO - Under_Sample_7:1_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 12:53:28,994 - INFO - Completed processing for Under_Sample_7:1_threshold_10
+2024-05-13 12:53:29,004 - INFO - Completed processing for df_heart_drop_20_imp
+2024-05-13 12:53:29,004 - INFO - Completed processing for Over_Sample_1:5_threshold_05
+2024-05-13 12:53:29,004 - INFO - Completed processing for Under_Sample_1:1_threshold_05
+2024-05-13 12:53:29,004 - INFO - Completed processing for Under_Sample_7:1_threshold_40
+2024-05-13 12:53:29,004 - INFO - Completed processing for Over_Sample_1:2_threshold_10
+2024-05-13 12:53:29,004 - INFO - Completed processing for Under_Sample_2:1_threshold_10
+2024-05-13 12:53:29,005 - INFO - Completed processing for Under_Sample_7:1_threshold_00
+2024-05-13 12:53:33,643 - INFO - Processing dataset: Over_Sample_1:3_threshold_20
+2024-05-13 13:11:15,803 - INFO - Over_Sample_1:7_threshold_05GridSearch completed.
+2024-05-13 13:11:17,550 - INFO - Over_Sample_1:7_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:11:22,390 - INFO - Processing dataset: df_heart_drop_03_imp
+2024-05-13 13:15:04,126 - INFO - Over_Sample_1:2_threshold_20GridSearch completed.
+2024-05-13 13:15:05,371 - INFO - Over_Sample_1:2_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:15:10,877 - INFO - Processing dataset: Over_Sample_1:3_threshold_05
+2024-05-13 13:17:22,768 - INFO - Over_Sample_1:7_threshold_40GridSearch completed.
+2024-05-13 13:17:24,182 - INFO - Over_Sample_1:7_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:17:28,623 - INFO - Completed processing for Over_Sample_1:7_threshold_40
+2024-05-13 13:17:28,623 - INFO - Completed processing for Over_Sample_1:7_threshold_05
+2024-05-13 13:17:28,623 - INFO - Completed processing for Under_Sample_1:1_threshold_01
+2024-05-13 13:17:28,624 - INFO - Completed processing for Over_Sample_1:3_threshold_40
+2024-05-13 13:17:28,624 - INFO - Completed processing for Over_Sample_1:3_threshold_10
+2024-05-13 13:17:28,624 - INFO - Completed processing for Over_Sample_1:1_threshold_05
+2024-05-13 13:17:28,624 - INFO - Completed processing for Under_Sample_3:1_threshold_10
+2024-05-13 13:17:28,624 - INFO - Completed processing for Under_Sample_3:1_threshold_05
+2024-05-13 13:17:28,624 - INFO - Completed processing for Under_Sample_1:1_threshold_20
+2024-05-13 13:17:31,010 - INFO - Processing dataset: Over_Sample_1:1_threshold_40
+2024-05-13 13:17:43,798 - INFO - Under_Sample_1:1_threshold_40GridSearch completed.
+2024-05-13 13:17:44,930 - INFO - Under_Sample_1:1_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:17:57,399 - INFO - Processing dataset: Over_Sample_1:5_threshold_03
+2024-05-13 13:18:35,814 - INFO - df_heart_drop_03_impGridSearch completed.
+2024-05-13 13:18:36,568 - INFO - df_heart_drop_03_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:18:48,468 - INFO - Processing dataset: Over_Sample_1:1_threshold_03
+2024-05-13 13:20:48,992 - INFO - Over_Sample_1:1_threshold_10GridSearch completed.
+2024-05-13 13:20:49,965 - INFO - Over_Sample_1:1_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:20:51,424 - INFO - Processing dataset: Under_Sample_1:1_threshold_00
+2024-05-13 13:22:49,965 - INFO - Over_Sample_1:3_threshold_01GridSearch completed.
+2024-05-13 13:22:51,543 - INFO - Over_Sample_1:3_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:23:28,112 - INFO - Processing dataset: Under_Sample_7:1_threshold_05
+2024-05-13 13:26:15,342 - INFO - Under_Sample_5:1_threshold_00GridSearch completed.
+2024-05-13 13:26:16,049 - INFO - Under_Sample_5:1_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:26:32,428 - INFO - Processing dataset: Under_Sample_5:1_threshold_01
+2024-05-13 13:36:33,113 - INFO - Over_Sample_1:1_threshold_20GridSearch completed.
+2024-05-13 13:36:34,278 - INFO - Over_Sample_1:1_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:36:38,846 - INFO - Processing dataset: Under_Sample_2:1_threshold_01
+2024-05-13 13:39:38,240 - INFO - Over_Sample_1:7_threshold_01GridSearch completed.
+2024-05-13 13:39:39,527 - INFO - Over_Sample_1:7_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:39:41,685 - INFO - Completed processing for Over_Sample_1:7_threshold_01
+2024-05-13 13:39:57,613 - INFO - Processing dataset: Over_Sample_1:5_threshold_01
+2024-05-13 13:51:43,536 - INFO - Under_Sample_3:1_threshold_00GridSearch completed.
+2024-05-13 13:51:44,207 - INFO - Under_Sample_3:1_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:51:50,368 - INFO - Processing dataset: Over_Sample_1:2_threshold_03
+2024-05-13 13:54:21,030 - INFO - Under_Sample_1:1_threshold_00GridSearch completed.
+2024-05-13 13:54:21,486 - INFO - Under_Sample_1:1_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 13:54:25,051 - INFO - Processing dataset: Under_Sample_2:1_threshold_00
+2024-05-13 14:09:44,769 - INFO - Over_Sample_1:1_threshold_03GridSearch completed.
+2024-05-13 14:09:45,656 - INFO - Over_Sample_1:1_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:09:50,514 - INFO - Processing dataset: Under_Sample_3:1_threshold_03
+2024-05-13 14:10:43,942 - INFO - Over_Sample_1:1_threshold_40GridSearch completed.
+2024-05-13 14:10:45,041 - INFO - Over_Sample_1:1_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:10:57,980 - INFO - Processing dataset: Over_Sample_1:3_threshold_03
+2024-05-13 14:23:38,441 - INFO - Over_Sample_1:7_threshold_10GridSearch completed.
+2024-05-13 14:23:39,956 - INFO - Over_Sample_1:7_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:23:42,105 - INFO - Completed processing for Over_Sample_1:7_threshold_10
+2024-05-13 14:23:42,109 - INFO - Completed processing for Over_Sample_1:1_threshold_00
+2024-05-13 14:23:42,109 - INFO - Completed processing for Under_Sample_5:1_threshold_00
+2024-05-13 14:23:42,109 - INFO - Completed processing for Over_Sample_1:3_threshold_01
+2024-05-13 14:23:42,109 - INFO - Completed processing for Over_Sample_1:2_threshold_20
+2024-05-13 14:23:56,459 - INFO - Processing dataset: Under_Sample_5:1_threshold_03
+2024-05-13 14:29:48,777 - INFO - Over_Sample_1:3_threshold_20GridSearch completed.
+2024-05-13 14:29:50,483 - INFO - Over_Sample_1:3_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:30:00,419 - INFO - Processing dataset: Over_Sample_1:7_threshold_00
+2024-05-13 14:37:38,537 - INFO - Under_Sample_5:1_threshold_20GridSearch completed.
+2024-05-13 14:37:40,249 - INFO - Under_Sample_5:1_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:37:44,822 - INFO - Processing dataset: Over_Sample_1:2_threshold_01
+2024-05-13 14:42:01,184 - INFO - Under_Sample_2:1_threshold_00GridSearch completed.
+2024-05-13 14:42:01,852 - INFO - Under_Sample_2:1_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:42:38,360 - INFO - Processing dataset: Under_Sample_7:1_threshold_20
+2024-05-13 14:46:47,969 - INFO - Under_Sample_5:1_threshold_05GridSearch completed.
+2024-05-13 14:46:49,447 - INFO - Under_Sample_5:1_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:46:50,763 - INFO - Completed processing for Under_Sample_5:1_threshold_05
+2024-05-13 14:46:50,770 - INFO - Completed processing for Under_Sample_5:1_threshold_20
+2024-05-13 14:46:50,770 - INFO - Completed processing for Under_Sample_1:1_threshold_40
+2024-05-13 14:46:50,770 - INFO - Completed processing for Over_Sample_1:1_threshold_10
+2024-05-13 14:46:50,770 - INFO - Completed processing for df_heart_drop_00_imp
+2024-05-13 14:46:50,771 - INFO - Completed processing for Under_Sample_3:1_threshold_00
+2024-05-13 14:46:50,771 - INFO - Completed processing for Over_Sample_1:1_threshold_20
+2024-05-13 14:46:50,771 - INFO - Completed processing for Over_Sample_1:3_threshold_20
+2024-05-13 14:46:50,771 - INFO - Completed processing for df_heart_drop_03_imp
+2024-05-13 14:46:55,001 - INFO - Processing dataset: Under_Sample_1:1_threshold_10
+2024-05-13 14:48:43,186 - INFO - Over_Sample_1:3_threshold_05GridSearch completed.
+2024-05-13 14:48:44,807 - INFO - Over_Sample_1:3_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:48:46,517 - INFO - Completed processing for Over_Sample_1:3_threshold_05
+2024-05-13 14:48:46,517 - INFO - Completed processing for Over_Sample_1:1_threshold_40
+2024-05-13 14:49:22,520 - INFO - Processing dataset: Over_Sample_1:7_threshold_03
+2024-05-13 14:50:43,940 - INFO - Under_Sample_2:1_threshold_01GridSearch completed.
+2024-05-13 14:50:45,246 - INFO - Under_Sample_2:1_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:50:48,633 - INFO - Processing dataset: df_heart_drop_40_imp
+2024-05-13 14:59:44,312 - INFO - df_heart_drop_40_impGridSearch completed.
+2024-05-13 14:59:45,256 - INFO - df_heart_drop_40_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 14:59:47,530 - INFO - Processing dataset: df_heart_drop_10_imp
+2024-05-13 15:02:34,160 - INFO - Over_Sample_1:2_threshold_03GridSearch completed.
+2024-05-13 15:02:35,658 - INFO - Over_Sample_1:2_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:03:04,012 - INFO - Processing dataset: Under_Sample_5:1_threshold_10
+2024-05-13 15:08:28,226 - INFO - df_heart_drop_10_impGridSearch completed.
+2024-05-13 15:08:29,178 - INFO - df_heart_drop_10_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:08:54,517 - INFO - Processing dataset: Under_Sample_7:1_threshold_03
+2024-05-13 15:29:04,737 - INFO - Under_Sample_5:1_threshold_01GridSearch completed.
+2024-05-13 15:29:06,419 - INFO - Under_Sample_5:1_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:29:30,271 - INFO - Processing dataset: Over_Sample_1:7_threshold_20
+2024-05-13 15:35:00,908 - INFO - Over_Sample_1:2_threshold_01GridSearch completed.
+2024-05-13 15:35:02,581 - INFO - Over_Sample_1:2_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:35:16,936 - INFO - Processing dataset: Under_Sample_3:1_threshold_01
+2024-05-13 15:38:41,341 - INFO - Over_Sample_1:5_threshold_03GridSearch completed.
+2024-05-13 15:38:42,134 - INFO - Over_Sample_1:5_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:38:42,451 - INFO - Completed processing for Over_Sample_1:5_threshold_03
+2024-05-13 15:38:42,460 - INFO - Completed processing for Over_Sample_1:1_threshold_03
+2024-05-13 15:38:42,460 - INFO - Completed processing for Under_Sample_1:1_threshold_00
+2024-05-13 15:38:50,475 - INFO - Processing dataset: Under_Sample_7:1_threshold_01
+2024-05-13 15:39:16,244 - INFO - Over_Sample_1:5_threshold_01GridSearch completed.
+2024-05-13 15:39:16,967 - INFO - Over_Sample_1:5_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:39:22,193 - INFO - Processing dataset: Under_Sample_1:1_threshold_03
+2024-05-13 15:45:44,727 - INFO - Under_Sample_1:1_threshold_10GridSearch completed.
+2024-05-13 15:45:46,690 - INFO - Under_Sample_1:1_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:46:08,596 - INFO - Over_Sample_1:3_threshold_03GridSearch completed.
+2024-05-13 15:46:09,859 - INFO - Over_Sample_1:3_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:46:10,654 - INFO - Processing dataset: Under_Sample_5:1_threshold_40
+2024-05-13 15:46:44,796 - INFO - Processing dataset: Over_Sample_1:5_threshold_40
+2024-05-13 15:50:46,639 - INFO - Under_Sample_3:1_threshold_03GridSearch completed.
+2024-05-13 15:50:47,948 - INFO - Under_Sample_3:1_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 15:51:01,568 - INFO - Processing dataset: Under_Sample_3:1_threshold_20
+2024-05-13 16:12:00,483 - INFO - Over_Sample_1:7_threshold_00GridSearch completed.
+2024-05-13 16:12:01,583 - INFO - Over_Sample_1:7_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 16:12:05,199 - INFO - Processing dataset: Over_Sample_1:1_threshold_01
+2024-05-13 16:20:44,450 - INFO - Under_Sample_5:1_threshold_03GridSearch completed.
+2024-05-13 16:20:46,284 - INFO - Under_Sample_5:1_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 16:20:51,420 - INFO - Processing dataset: Over_Sample_1:3_threshold_00
+2024-05-13 16:32:00,308 - INFO - Under_Sample_1:1_threshold_03GridSearch completed.
+2024-05-13 16:32:01,623 - INFO - Under_Sample_1:1_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 16:32:17,696 - INFO - Processing dataset: Under_Sample_2:1_threshold_03
+2024-05-13 16:45:59,410 - INFO - Under_Sample_7:1_threshold_05GridSearch completed.
+2024-05-13 16:46:01,302 - INFO - Under_Sample_7:1_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 16:46:02,340 - INFO - Completed processing for Under_Sample_7:1_threshold_05
+2024-05-13 16:46:02,350 - INFO - Completed processing for Under_Sample_5:1_threshold_01
+2024-05-13 16:46:02,350 - INFO - Completed processing for Under_Sample_2:1_threshold_01
+2024-05-13 16:46:02,350 - INFO - Completed processing for Over_Sample_1:5_threshold_01
+2024-05-13 16:46:02,350 - INFO - Completed processing for Over_Sample_1:2_threshold_03
+2024-05-13 16:46:02,350 - INFO - Completed processing for Under_Sample_2:1_threshold_00
+2024-05-13 16:46:02,350 - INFO - Completed processing for Under_Sample_3:1_threshold_03
+2024-05-13 16:46:02,350 - INFO - Completed processing for Over_Sample_1:3_threshold_03
+2024-05-13 16:46:02,350 - INFO - Completed processing for Under_Sample_5:1_threshold_03
+2024-05-13 16:46:02,350 - INFO - Completed processing for Over_Sample_1:7_threshold_00
+2024-05-13 16:46:02,351 - INFO - Completed processing for Over_Sample_1:2_threshold_01
+2024-05-13 16:46:03,809 - INFO - Processing dataset: df_heart_drop_01_imp
+2024-05-13 16:50:36,577 - INFO - Under_Sample_3:1_threshold_01GridSearch completed.
+2024-05-13 16:50:38,221 - INFO - Under_Sample_3:1_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 16:50:44,778 - INFO - Processing dataset: Over_Sample_1:2_threshold_40
+2024-05-13 16:52:58,402 - INFO - df_heart_drop_01_impGridSearch completed.
+2024-05-13 16:52:59,234 - INFO - df_heart_drop_01_impModel saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 16:53:12,338 - INFO - Processing dataset: Under_Sample_3:1_threshold_40
+2024-05-13 17:02:30,862 - INFO - Over_Sample_1:1_threshold_01GridSearch completed.
+2024-05-13 17:02:31,628 - INFO - Over_Sample_1:1_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:02:36,291 - INFO - Processing dataset: Over_Sample_1:2_threshold_00
+2024-05-13 17:31:46,923 - INFO - Under_Sample_5:1_threshold_10GridSearch completed.
+2024-05-13 17:31:47,990 - INFO - Under_Sample_5:1_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:32:02,872 - INFO - Processing dataset: Over_Sample_1:5_threshold_10
+2024-05-13 17:36:23,354 - INFO - Over_Sample_1:7_threshold_03GridSearch completed.
+2024-05-13 17:36:25,098 - INFO - Over_Sample_1:7_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:36:31,371 - INFO - Processing dataset: Under_Sample_2:1_threshold_05
+2024-05-13 17:38:47,563 - INFO - Over_Sample_1:3_threshold_00GridSearch completed.
+2024-05-13 17:38:48,203 - INFO - Over_Sample_1:3_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:38:53,285 - INFO - Processing dataset: Under_Sample_2:1_threshold_20
+2024-05-13 17:39:14,867 - INFO - Under_Sample_3:1_threshold_20GridSearch completed.
+2024-05-13 17:39:16,567 - INFO - Under_Sample_3:1_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:39:25,030 - INFO - Processing dataset: Over_Sample_1:5_threshold_00
+2024-05-13 17:43:26,151 - INFO - Under_Sample_2:1_threshold_03GridSearch completed.
+2024-05-13 17:43:27,145 - INFO - Under_Sample_2:1_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:43:55,176 - INFO - Processing dataset: Over_Sample_1:5_threshold_20
+2024-05-13 17:52:32,978 - INFO - Under_Sample_7:1_threshold_03GridSearch completed.
+2024-05-13 17:52:34,403 - INFO - Under_Sample_7:1_threshold_03Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 17:52:41,082 - INFO - Processing dataset: Over_Sample_1:2_threshold_05
+2024-05-13 17:52:50,318 - INFO - Over_Sample_1:2_threshold_00GridSearch completed.
+2024-05-13 17:52:51,135 - INFO - Over_Sample_1:2_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:01:04,395 - INFO - Under_Sample_5:1_threshold_40GridSearch completed.
+2024-05-13 18:01:06,091 - INFO - Under_Sample_5:1_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:03:56,553 - INFO - Under_Sample_7:1_threshold_01GridSearch completed.
+2024-05-13 18:03:58,001 - INFO - Under_Sample_7:1_threshold_01Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:05:27,581 - INFO - Under_Sample_7:1_threshold_20GridSearch completed.
+2024-05-13 18:05:29,385 - INFO - Under_Sample_7:1_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:05:32,257 - INFO - Completed processing for Under_Sample_7:1_threshold_20
+2024-05-13 18:05:32,264 - INFO - Completed processing for Under_Sample_1:1_threshold_10
+2024-05-13 18:05:32,264 - INFO - Completed processing for Over_Sample_1:7_threshold_03
+2024-05-13 18:05:32,264 - INFO - Completed processing for df_heart_drop_40_imp
+2024-05-13 18:05:32,264 - INFO - Completed processing for df_heart_drop_10_imp
+2024-05-13 18:05:32,264 - INFO - Completed processing for Under_Sample_5:1_threshold_10
+2024-05-13 18:05:32,264 - INFO - Completed processing for Under_Sample_7:1_threshold_03
+2024-05-13 18:13:50,266 - INFO - Over_Sample_1:7_threshold_20GridSearch completed.
+2024-05-13 18:13:51,749 - INFO - Over_Sample_1:7_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:13:52,565 - INFO - Completed processing for Over_Sample_1:7_threshold_20
+2024-05-13 18:13:52,565 - INFO - Completed processing for Under_Sample_3:1_threshold_01
+2024-05-13 18:13:52,565 - INFO - Completed processing for Under_Sample_7:1_threshold_01
+2024-05-13 18:13:52,565 - INFO - Completed processing for Under_Sample_1:1_threshold_03
+2024-05-13 18:13:52,565 - INFO - Completed processing for Under_Sample_5:1_threshold_40
+2024-05-13 18:17:10,813 - INFO - Over_Sample_1:5_threshold_40GridSearch completed.
+2024-05-13 18:17:12,193 - INFO - Over_Sample_1:5_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:17:13,308 - INFO - Completed processing for Over_Sample_1:5_threshold_40
+2024-05-13 18:17:13,308 - INFO - Completed processing for Under_Sample_3:1_threshold_20
+2024-05-13 18:17:13,308 - INFO - Completed processing for Over_Sample_1:1_threshold_01
+2024-05-13 18:17:13,308 - INFO - Completed processing for Over_Sample_1:3_threshold_00
+2024-05-13 18:17:13,308 - INFO - Completed processing for Under_Sample_2:1_threshold_03
+2024-05-13 18:17:13,308 - INFO - Completed processing for df_heart_drop_01_imp
+2024-05-13 18:17:42,613 - INFO - Over_Sample_1:2_threshold_40GridSearch completed.
+2024-05-13 18:17:43,573 - INFO - Over_Sample_1:2_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:17:43,993 - INFO - Completed processing for Over_Sample_1:2_threshold_40
+2024-05-13 18:24:06,295 - INFO - Under_Sample_3:1_threshold_40GridSearch completed.
+2024-05-13 18:24:06,991 - INFO - Under_Sample_3:1_threshold_40Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:24:07,119 - INFO - Completed processing for Under_Sample_3:1_threshold_40
+2024-05-13 18:24:07,119 - INFO - Completed processing for Over_Sample_1:2_threshold_00
+2024-05-13 18:33:27,323 - INFO - Under_Sample_2:1_threshold_05GridSearch completed.
+2024-05-13 18:33:27,588 - INFO - Under_Sample_2:1_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:33:27,932 - INFO - Under_Sample_2:1_threshold_20GridSearch completed.
+2024-05-13 18:33:28,188 - INFO - Under_Sample_2:1_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:35:27,748 - INFO - Over_Sample_1:2_threshold_05GridSearch completed.
+2024-05-13 18:35:28,005 - INFO - Over_Sample_1:2_threshold_05Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:40:47,681 - INFO - Over_Sample_1:5_threshold_00GridSearch completed.
+2024-05-13 18:40:47,834 - INFO - Over_Sample_1:5_threshold_00Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:41:47,091 - INFO - Over_Sample_1:5_threshold_10GridSearch completed.
+2024-05-13 18:41:47,242 - INFO - Over_Sample_1:5_threshold_10Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:41:47,400 - INFO - Completed processing for Over_Sample_1:5_threshold_10
+2024-05-13 18:41:47,400 - INFO - Completed processing for Under_Sample_2:1_threshold_05
+2024-05-13 18:41:47,400 - INFO - Completed processing for Under_Sample_2:1_threshold_20
+2024-05-13 18:41:47,400 - INFO - Completed processing for Over_Sample_1:5_threshold_00
+2024-05-13 18:43:39,166 - INFO - Over_Sample_1:5_threshold_20GridSearch completed.
+2024-05-13 18:43:39,297 - INFO - Over_Sample_1:5_threshold_20Model saved to ../../Data/GoogleDrive/Baseline/
+2024-05-13 18:43:39,313 - INFO - Completed processing for Over_Sample_1:5_threshold_20
+2024-05-13 18:43:39,313 - INFO - Completed processing for Over_Sample_1:2_threshold_05
