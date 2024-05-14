@@ -1,1 +1,4 @@
 2024-05-14 12:22:07,873 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-14 12:41:58,113 - INFO - GridSearch for neurons completed.
+2024-05-14 12:41:58,678 - INFO - Model saved to ../../Data/GoogleDrive/MLP_Results/
+2024-05-14 12:41:58,759 - INFO - neurons GridSearch completed!
