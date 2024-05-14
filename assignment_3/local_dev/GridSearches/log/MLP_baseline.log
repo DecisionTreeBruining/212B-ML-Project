@@ -1,7 +1,4 @@
-2024-05-14 11:35:28,641 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
-2024-05-14 11:42:30,417 - INFO - GridSearch for baseline completed.
-2024-05-14 11:42:30,635 - INFO - Model saved to ../../Data/GoogleDrive/MLP_Results/
-2024-05-14 11:49:09,584 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
-2024-05-14 11:55:37,367 - INFO - GridSearch for baseline completed.
-2024-05-14 11:55:37,578 - INFO - Model saved to ../../Data/GoogleDrive/MLP_Results/
-2024-05-14 11:55:37,688 - INFO - baseline GridSearch completed!
+2024-05-14 16:13:53,097 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-14 16:21:27,241 - INFO - GridSearch for baseline completed.
+2024-05-14 16:21:27,460 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-14 16:21:27,474 - INFO - baseline GridSearch completed!
