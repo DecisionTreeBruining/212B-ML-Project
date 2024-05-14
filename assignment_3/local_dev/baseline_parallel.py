@@ -101,7 +101,7 @@ def process_dataset(name, lazy_dict, param_grid, save_pth):
     test_accuracy = accuracy_score(y_test, y_pred_test)
     
     # Save the model
-    with open(f"{save_pth}{name}_MLPbaseline", 'wb') as file:
+    with open(f"{save_pth}{name}_MLPbaseline.pkl", 'wb') as file:
         pickle.dump(best_model, file)
 
     logging.info(f"{name}Model saved to {save_pth}")

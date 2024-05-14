@@ -236,3 +236,46 @@ def balanced_dict(X_train, y_train, ratios):
         balanced_X_train[under_name], balanced_y_train[under_name] = rand_under_sample(X_train, y_train, i)
         balanced_X_train[over_name], balanced_y_train[over_name] = rand_over_sample(X_train, y_train, i)
     return balanced_X_train, balanced_y_train
+
+# Unique Datasets.
+def unq_df_names(lazy_dict):
+    """
+    Creates a set of unique datasets from a LazyFrame dictionary.
+    ---
+    Args: 
+        lazy_dict (dict): Contains LazyFrame names and corresponding LazyFrames.
+    Returns:
+        unq_names (set): Contains unique dataset names.
+    """
+    all_names = list()
+    for key in lazy_dict:
+        if key[-6:] == "_train":
+            all_names.append(key[:-8]) # Remove _X_train and _y_train
+        elif key[-5:] == "_test":
+            all_names.append(key[:-7]) # Remove _X_test and _y_test
+        else:
+            pass
+    unq_names = set(all_names)
+    return unq_names
+
+# Return Corresponding Test Set.
+def corr_testset(unq_name):
+    """
+    Return the names of testsets corresponding to a preprocessed trainset
+    ---
+    Args:
+        unq_name(set): Contains unique dataset names.
+    Returns:
+        X_test_name(str): Name of corresponding predictor testset.
+        y_test_name(str): Name of corresponding response testset.
+    """
+    threshold = unq_name[-2:] # 2 possibilities: "##" or "mp"
+    if threshold.isnumeric():
+        # Use null-threshold datasets with no balancing operations.
+        X_test_name = f"df_heart_drop_{threshold}_imp_X_test"
+        y_test_name = f"df_heart_drop_{threshold}_imp_y_test"
+    else:
+        # Use null-threshold datasets with no balancing operations. 
+        X_test_name = f"{unq_name}_X_test"
+        y_test_name = f"{unq_name}_y_test"
+    return X_test_name, y_test_name
