@@ -171,4 +171,4 @@ param_grid = {
     'max_fun': [15000]  # Maximum number of loss function calls
 }
 
-results = mlp_baseline(pq_jar, unq_names, param_grid, save_pth)
+mlp_baseline(pq_jar, unq_names, param_grid, save_pth)
