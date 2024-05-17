@@ -163,8 +163,8 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         best_results_df = pd.DataFrame(best_results)
 
         # Save results as Parquet
-        best_results_df.to_parquet(f"{save_pth}test_results_{test_name}.parquet", index=False)
-        param_results_df.to_parquet(f"{save_pth}grid_results_{test_name}.parquet", index=False)
+        best_results_df.to_parquet(f"{save_pth}test_results_{test_name}_baseline.parquet", index=False)
+        param_results_df.to_parquet(f"{save_pth}grid_results_{test_name}_baseline.parquet", index=False)
 
         # Debugging Checkpoint
         print(f"{test_name} GridSearch completed!", flush=True)
