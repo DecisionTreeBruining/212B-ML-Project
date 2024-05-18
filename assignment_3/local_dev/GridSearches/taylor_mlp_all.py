@@ -29,18 +29,19 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
     ## Initializing
     # Define number of threads to be used in GridSearch
     if threads is None:
-        threads = os.cpu_count()
+        threads = os.cpu_count() - 2
         print(f"Using {threads} CPU threads!")
-
-    # Log for debugging
-    logging.basicConfig(
-        filename=f"./log/MLP_{test_name}.log",
-        filemode='w', 
-        level=logging.INFO, 
-        format='%(asctime)s - %(levelname)s - %(message)s')
     
     ## GridSearch and Results
     for name in unq_names:
+        
+        # Log for debugging
+        logging.basicConfig(
+            filename=f"./log/MLP_{test_name}.log",
+            filemode='w', 
+            level=logging.INFO, 
+            format='%(asctime)s - %(levelname)s - %(message)s')
+        
         # Results from prediction on test_set
         best_results = {
             "Dataset_Name": [],
@@ -93,12 +94,12 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
 
         # Define GridSearch
         grid_search = GridSearchCV(
-            mlp(),
+            mlp(max_iter = 1000),
             param_grid=param_grid, 
             cv=cv,
             scoring='recall',
             n_jobs=threads,
-            verbose=1, 
+            verbose=3, 
             return_train_score=True)
 
 
@@ -191,13 +192,12 @@ all_test_parameters = {
         'max_iter': [200],
         'momentum': [0.9],
         'n_iter_no_change': [10]},
-    'neurons-hidden_layer_sizes': {'hidden_layer_sizes': [(1), (50), (250), (500)]},
-    'layers-hidden_layer_sizes': {'hidden_layer_sizes': [(100, 100), (100, 100, 100), (100, 100, 100, 100), (100, 100, 100, 100, 100)]},
+    '_neurons-hidden_layer_sizes': {'hidden_layer_sizes': [(1), (50), (250), (500)]},
+    '_layers-hidden_layer_sizes': {'hidden_layer_sizes': [(100, 100), (100, 100, 100), (100, 100, 100, 100), (100, 100, 100, 100, 100)]},
     '-activation': {'activation': ['identity', 'logistic', 'tanh']},
     '-batch_size': {'batch_size': [1, 100, 500, 1000]},
     '-learning_rate': {'learning_rate': ['invscaling', 'adaptive']},
     '-learning_rate_init': {'learning_rate_init': [0.0001, 0.01, .1]},
-    '-max_iter': {'max_iter': [100, 250, 500, 1000]},
     '-random_state': {'ramdom_state': [100, 101, 102]},
     '-solver': {'solver': ['sgd', 'lbfgs']},
     '-alpha': {'alpha': [0.0, 0.25, 0.5, 0.75, 1.0]},
