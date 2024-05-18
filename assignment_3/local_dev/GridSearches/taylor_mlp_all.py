@@ -91,12 +91,9 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         # Define cross-validation folds
         cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=212)
 
-        # Define mlp model
-        mlp_model = mlp(early_stopping=True, random_state=212)
-
         # Define GridSearch
         grid_search = GridSearchCV(
-            mlp_model,
+            mlp(),
             param_grid=param_grid, 
             cv=cv,
             scoring='recall',
