@@ -29,7 +29,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
     ## Initializing
     # Define number of threads to be used in GridSearch
     if threads is None:
-        threads = os.cpu_count() - 2
+        threads = os.cpu_count()
         print(f"Using {threads} CPU threads!")
 
     # Log for debugging
@@ -144,7 +144,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         test_accuracy = accuracy_score(y_test, y_pred_test)
 
         # Save best model as pickle
-        with open(f"{save_pth}best_model_{test_name}.pkl", 'wb') as file:
+        with open(f"{save_pth}best_model{test_name}.pkl", 'wb') as file:
             pickle.dump(best_model, file)
 
         # Debugging Checkpoint
@@ -163,8 +163,8 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         best_results_df = pd.DataFrame(best_results)
 
         # Save results as Parquet
-        best_results_df.to_parquet(f"{save_pth}test_results_{test_name}_baseline.parquet", index=False)
-        param_results_df.to_parquet(f"{save_pth}grid_results_{test_name}_baseline.parquet", index=False)
+        best_results_df.to_parquet(f"{save_pth}test_results{test_name}.parquet", index=False)
+        param_results_df.to_parquet(f"{save_pth}grid_results{test_name}.parquet", index=False)
 
         # Debugging Checkpoint
         print(f"{test_name} GridSearch completed!", flush=True)
@@ -183,17 +183,29 @@ unq_names = unq_df_names(pq_jar)
 
 # all parameters
 all_test_parameters = {
-    'neurons': {'hidden_layer_sizes': [(1), (50), (250), (500)]},
-    'layers': {'hidden_layer_sizes': [(100,), (100, 100, 100), (100, 100, 100, 100, 100), (100, 100, 100, 100, 100, 100, 100, 100, 100)]},
-    'activation': {'activation': ['logistic', 'tanh', 'relu']},
-    'batch_size': {'batch_size': [1, 100, 500, 1000]},
-    'learning_rate': {'learning_rate': ['constant', 'invscaling', 'adaptive']},
-    'learning_rate_init': {'learning_rate_init': [0.0001, 0.01, .1]},
-    'max_iter': {'max_iter': [100, 250, 500, 1000]},
-    'solver': {'solver': ['sgd', 'adam']},
-    'alpha': {'alpha': [0.0, 0.25, 0.5, 0.75, 1.0]},
-    'momentum': {'momentum': [0.0, 0.25, 0.5, 0.75, 1.0]},
-    'iter_no_change': {'n_iter_no_change': [50, 100, 250, 500]}
+    '-baseline': {
+        'hidden_layer_sizes': [(100,)],
+        'activation': ['relu'],
+        'solver': ['adam'],
+        'alpha': [0.0001],
+        'batch_size': ['auto'],
+        'learning_rate': ['constant'],
+        'learning_rate_init': [0.001],
+        'max_iter': [200],
+        'momentum': [0.9],
+        'n_iter_no_change': [10]},
+    'neurons-hidden_layer_sizes': {'hidden_layer_sizes': [(1), (50), (250), (500)]},
+    'layers-hidden_layer_sizes': {'hidden_layer_sizes': [(100, 100), (100, 100, 100), (100, 100, 100, 100), (100, 100, 100, 100, 100)]},
+    '-activation': {'activation': ['identity', 'logistic', 'tanh']},
+    '-batch_size': {'batch_size': [1, 100, 500, 1000]},
+    '-learning_rate': {'learning_rate': ['invscaling', 'adaptive']},
+    '-learning_rate_init': {'learning_rate_init': [0.0001, 0.01, .1]},
+    '-max_iter': {'max_iter': [100, 250, 500, 1000]},
+    '-random_state': {'ramdom_state': [100, 101, 102]},
+    '-solver': {'solver': ['sgd', 'lbfgs']},
+    '-alpha': {'alpha': [0.0, 0.25, 0.5, 0.75, 1.0]},
+    '-momentum': {'momentum': [0.0, 0.25, 0.5, 0.75, 1.0]},
+    '-n_iter_no_change': {'n_iter_no_change': [50, 100, 250, 500]}
 }
 
 # Run the model
