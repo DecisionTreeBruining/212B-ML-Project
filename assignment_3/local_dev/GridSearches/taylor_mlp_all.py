@@ -47,6 +47,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
             "Dataset_Name": [],
             "Grid_Variable": [],
             "Parameters": [],
+            "Num_Parameters":[],
             "Recall": [], 
             "ROC_AUC": [], 
             "Accuracy": [],
@@ -57,6 +58,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
             "Dataset_Name": [],
             "Grid_Variable": [],
             "Parameters": [],
+            "Num_Parameters":[],
             "Recall": [], 
             "Fit_Time": []}
         
@@ -87,6 +89,8 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         scaler = StandardScaler()
         X_train_scaled = scaler.fit_transform(X_train)
         X_test_scaled = scaler.transform(X_test)
+
+        num_columns = X_train_scaled.shape[1]
 
         ## Defining Modeling and GridSearch
         # Define cross-validation folds
@@ -119,11 +123,13 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         # Storing Results for each parameter combination
         for i in range(len(grid_search.cv_results_['params'])):
             param_combination = grid_search.cv_results_['params'][i]
+            num_params = calculate_mlp_parameters(num_columns, list(param_combination.values()),1)
             recall = grid_search.cv_results_['mean_test_score'][i]
             fit_time = grid_search.cv_results_['mean_fit_time'][i]
             param_results["Dataset_Name"].append(name)
             param_results["Grid_Variable"].append(test_name)
             param_results["Parameters"].append(param_combination)
+            param_results["Num_Parameters"].append(num_params)
             param_results["Recall"].append(recall)
             param_results["Fit_Time"].append(fit_time)
         
@@ -140,6 +146,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         test_recall = recall_score(y_test, y_pred_test)
         test_roc_auc = roc_auc_score(y_test, best_model.predict_proba(X_test_scaled)[:, 1])
         test_accuracy = accuracy_score(y_test, y_pred_test)
+        num_params = calculate_mlp_parameters(num_columns, list(grid_search.best_params_.values()),1)
 
         # Save best model as pickle
         with open(f"{save_pth}best_model{test_name}.pkl", 'wb') as file:
@@ -152,6 +159,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         best_results["Dataset_Name"].append(name)
         best_results["Grid_Variable"].append(test_name)
         best_results["Parameters"].append(grid_search.best_params_)
+        best_results["Num_Parameters"].append(num_params)
         best_results["Recall"].append(test_recall)
         best_results["ROC_AUC"].append(test_roc_auc)
         best_results["Accuracy"].append(test_accuracy)
@@ -194,17 +202,39 @@ all_test_parameters = {
         'n_iter_no_change': [10]},
     '_neurons-hidden_layer_sizes': {'hidden_layer_sizes': [(1), (50), (250), (500)]},
     '_layers-hidden_layer_sizes': {'hidden_layer_sizes': [(100, 100), (100, 100, 100), (100, 100, 100, 100), (100, 100, 100, 100, 100)]},
-    '-activation': {'activation': ['identity', 'logistic', 'tanh']},
-    '-batch_size': {'batch_size': [1, 100, 500, 1000]},
-    '-learning_rate': {'learning_rate': ['invscaling', 'adaptive']},
-    '-learning_rate_init': {'learning_rate_init': [0.0001, 0.01, .1]},
-    '-random_state': {'ramdom_state': [100, 101, 102]},
-    '-solver': {'solver': ['sgd', 'lbfgs']},
-    '-alpha': {'alpha': [0.0, 0.25, 0.5, 0.75, 1.0]},
-    '-momentum': {'momentum': [0.0, 0.25, 0.5, 0.75, 1.0]},
-    '-n_iter_no_change': {'n_iter_no_change': [50, 100, 250, 500]}
+    '_parmeters-hidden_layer_sizes':{'hidden_layer_sizes': [(65, 65), (53, 53, 54), (47, 46, 46, 46), (42, 42, 42, 41, 42)]}
+    # '-activation': {'activation': ['identity', 'logistic', 'tanh']},
+    # '-batch_size': {'batch_size': [1, 100, 500, 1000]},
+    # '-learning_rate': {'learning_rate': ['invscaling', 'adaptive']},
+    # '-learning_rate_init': {'learning_rate_init': [0.0001, 0.01, .1]},
+    # '-random_state': {'ramdom_state': [100, 101, 102]},
+    # '-solver': {'solver': ['sgd', 'lbfgs']},
+    # '-alpha': {'alpha': [0.0, 0.25, 0.5, 0.75, 1.0]},
+    # '-momentum': {'momentum': [0.0, 0.25, 0.5, 0.75, 1.0]},
+    # '-n_iter_no_change': {'n_iter_no_change': [50, 100, 250, 500]}
 }
 
+
+def calculate_mlp_parameters(input_size, hidden_sizes, output_size):
+    """
+    Calculate the number of parameters in an MLP.
+    ---
+    Args:
+        input_size: Number of input features.
+        hidden_sizes: List of hidden layer sizes.
+        output_size: Number of output features.
+    return: 
+        num_params: Total number of parameters in the MLP.
+    """
+    layer_sizes = [input_size] + hidden_sizes + [output_size]
+    num_params = 0
+
+    for i in range(len(layer_sizes) - 1):
+        weights = layer_sizes[i] * layer_sizes[i + 1]
+        biases = layer_sizes[i + 1]
+        num_params += weights + biases
+
+    return num_params
 
 # Run the model
 for key, value in all_test_parameters.items():
