@@ -1,0 +1,181 @@
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+GridSearch completed
+-baseline GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 4 candidates, totalling 20 fits
+[CV 2/5] END activation=relu, alpha=0.0001, batch_size=auto, hidden_layer_sizes=(100,), learning_rate=constant, learning_rate_init=0.001, max_iter=200, momentum=0.9, n_iter_no_change=10, solver=adam;, score=(train=0.801, test=0.784) total time= 3.3min
+[CV 4/5] END hidden_layer_sizes=1;, score=(train=0.791, test=0.789) total time=  19.3s
+[CV 2/5] END hidden_layer_sizes=50;, score=(train=0.802, test=0.795) total time= 1.8min
+[CV 4/5] END hidden_layer_sizes=50;, score=(train=0.812, test=0.801) total time= 2.3min
+[CV 3/5] END hidden_layer_sizes=50;, score=(train=0.819, test=0.809) total time= 2.3min
+[CV 5/5] END hidden_layer_sizes=50;, score=(train=0.816, test=0.807) total time= 2.4min
+[CV 1/5] END hidden_layer_sizes=50;, score=(train=0.817, test=0.808) total time= 2.8min
+[CV 2/5] END hidden_layer_sizes=250;, score=(train=0.955, test=0.936) total time=12.2min
+[CV 3/5] END hidden_layer_sizes=250;, score=(train=0.910, test=0.880) total time=14.3min
+[CV 4/5] END hidden_layer_sizes=250;, score=(train=0.901, test=0.871) total time=14.5min
+[CV 5/5] END hidden_layer_sizes=250;, score=(train=0.909, test=0.881) total time=15.3min
+[CV 1/5] END hidden_layer_sizes=250;, score=(train=0.919, test=0.890) total time=18.9min
+[CV 4/5] END activation=relu, alpha=0.0001, batch_size=auto, hidden_layer_sizes=(100,), learning_rate=constant, learning_rate_init=0.001, max_iter=200, momentum=0.9, n_iter_no_change=10, solver=adam;, score=(train=0.830, test=0.809) total time= 3.1min
+[CV 1/5] END hidden_layer_sizes=1;, score=(train=0.771, test=0.770) total time=  13.9s
+[CV 5/5] END hidden_layer_sizes=500;, score=(train=0.977, test=0.962) total time=23.3min
+[CV 5/5] END activation=relu, alpha=0.0001, batch_size=auto, hidden_layer_sizes=(100,), learning_rate=constant, learning_rate_init=0.001, max_iter=200, momentum=0.9, n_iter_no_change=10, solver=adam;, score=(train=0.850, test=0.833) total time= 3.2min
+[CV 2/5] END hidden_layer_sizes=1;, score=(train=0.766, test=0.771) total time=  10.6s
+[CV 2/5] END hidden_layer_sizes=500;, score=(train=0.955, test=0.935) total time=24.6min
+[CV 1/5] END hidden_layer_sizes=500;, score=(train=0.979, test=0.967) total time=26.1min
+[CV 1/5] END activation=relu, alpha=0.0001, batch_size=auto, hidden_layer_sizes=(100,), learning_rate=constant, learning_rate_init=0.001, max_iter=200, momentum=0.9, n_iter_no_change=10, solver=adam;, score=(train=0.838, test=0.820) total time= 3.2min
+[CV 3/5] END hidden_layer_sizes=1;, score=(train=0.793, test=0.791) total time=  10.8s
+[CV 3/5] END hidden_layer_sizes=500;, score=(train=0.986, test=0.973) total time=31.2min
+[CV 3/5] END activation=relu, alpha=0.0001, batch_size=auto, hidden_layer_sizes=(100,), learning_rate=constant, learning_rate_init=0.001, max_iter=200, momentum=0.9, n_iter_no_change=10, solver=adam;, score=(train=0.838, test=0.819) total time= 3.5min
+[CV 5/5] END hidden_layer_sizes=1;, score=(train=0.780, test=0.780) total time=  13.3s
+[CV 4/5] END hidden_layer_sizes=500;, score=(train=0.954, test=0.933) total time=31.9min
+GridSearch completed
+_neurons-hidden_layer_sizes GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 4 candidates, totalling 20 fits
+[CV 5/5] END hidden_layer_sizes=(100, 100);, score=(train=0.950, test=0.929) total time=20.3min
+[CV 3/5] END hidden_layer_sizes=(100, 100, 100);, score=(train=0.969, test=0.954) total time=22.1min
+[CV 4/5] END hidden_layer_sizes=(100, 100, 100);, score=(train=0.975, test=0.963) total time=27.4min
+[CV 5/5] END hidden_layer_sizes=(100, 100, 100, 100);, score=(train=0.991, test=0.986) total time=27.9min
+[CV 4/5] END hidden_layer_sizes=(100, 100, 100, 100);, score=(train=0.991, test=0.986) total time=28.6min
+[CV 1/5] END hidden_layer_sizes=(100, 100, 100);, score=(train=0.978, test=0.967) total time=28.7min
+[CV 2/5] END hidden_layer_sizes=(100, 100, 100);, score=(train=0.969, test=0.953) total time=29.0min
+[CV 5/5] END hidden_layer_sizes=(100, 100, 100);, score=(train=0.983, test=0.973) total time=29.3min
+[CV 2/5] END hidden_layer_sizes=(100, 100, 100, 100);, score=(train=0.988, test=0.983) total time=30.3min
+[CV 1/5] END hidden_layer_sizes=(100, 100, 100, 100);, score=(train=0.986, test=0.980) total time=32.4min
+[CV 1/5] END hidden_layer_sizes=(100, 100, 100, 100, 100);, score=(train=0.987, test=0.982) total time=33.4min
+[CV 3/5] END hidden_layer_sizes=(100, 100, 100, 100);, score=(train=0.984, test=0.976) total time=34.4min
+[CV 4/5] END hidden_layer_sizes=(100, 100);, score=(train=0.924, test=0.898) total time=16.0min
+[CV 3/5] END hidden_layer_sizes=(100, 100, 100, 100, 100);, score=(train=0.989, test=0.984) total time=23.8min
+[CV 3/5] END hidden_layer_sizes=(100, 100);, score=(train=0.942, test=0.919) total time=15.9min
+[CV 2/5] END hidden_layer_sizes=(100, 100, 100, 100, 100);, score=(train=0.985, test=0.980) total time=25.9min
+[CV 2/5] END hidden_layer_sizes=(100, 100);, score=(train=0.954, test=0.932) total time=16.1min
+[CV 4/5] END hidden_layer_sizes=(100, 100, 100, 100, 100);, score=(train=0.992, test=0.987) total time=25.8min
+[CV 1/5] END hidden_layer_sizes=(100, 100);, score=(train=0.938, test=0.911) total time=17.2min
+[CV 5/5] END hidden_layer_sizes=(100, 100, 100, 100, 100);, score=(train=0.992, test=0.987) total time=31.9min
+GridSearch completed
+_layers-hidden_layer_sizes GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 3 candidates, totalling 15 fits
+[CV 1/5] END activation=identity;, score=(train=0.773, test=0.771) total time=  30.2s
+[CV 4/5] END activation=identity;, score=(train=0.774, test=0.771) total time=  34.8s
+[CV 3/5] END activation=identity;, score=(train=0.773, test=0.772) total time=  35.4s
+[CV 2/5] END activation=identity;, score=(train=0.776, test=0.780) total time=  40.5s
+[CV 5/5] END activation=identity;, score=(train=0.777, test=0.778) total time=  41.2s
+[CV 3/5] END activation=logistic;, score=(train=0.858, test=0.833) total time= 4.4min
+[CV 5/5] END activation=logistic;, score=(train=0.873, test=0.845) total time= 5.2min
+[CV 1/5] END activation=tanh;, score=(train=0.881, test=0.853) total time= 5.5min
+[CV 2/5] END activation=tanh;, score=(train=0.881, test=0.853) total time= 6.0min
+[CV 5/5] END activation=tanh;, score=(train=0.880, test=0.849) total time= 6.4min
+[CV 4/5] END activation=tanh;, score=(train=0.883, test=0.854) total time= 6.4min
+[CV 4/5] END activation=logistic;, score=(train=0.860, test=0.833) total time= 6.4min
+[CV 2/5] END activation=logistic;, score=(train=0.844, test=0.818) total time= 6.5min
+[CV 1/5] END activation=logistic;, score=(train=0.872, test=0.844) total time= 7.1min
+[CV 3/5] END activation=tanh;, score=(train=0.879, test=0.850) total time= 7.4min
+GridSearch completed
+-activation GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 4 candidates, totalling 20 fits
+[CV 3/5] END batch_size=100;, score=(train=0.854, test=0.838) total time= 5.5min
+[CV 4/5] END batch_size=500;, score=(train=0.832, test=0.814) total time= 5.8min
+[CV 5/5] END batch_size=500;, score=(train=0.859, test=0.841) total time= 6.1min
+[CV 1/5] END batch_size=1000;, score=(train=0.840, test=0.821) total time= 6.2min
+[CV 1/5] END batch_size=100;, score=(train=0.849, test=0.832) total time= 6.6min
+[CV 5/5] END batch_size=100;, score=(train=0.791, test=0.772) total time= 6.6min
+[CV 2/5] END batch_size=500;, score=(train=0.856, test=0.842) total time= 4.3min
+[CV 2/5] END batch_size=1000;, score=(train=0.837, test=0.824) total time= 2.9min
+[CV 2/5] END batch_size=100;, score=(train=0.816, test=0.800) total time= 7.5min
+[CV 4/5] END batch_size=100;, score=(train=0.866, test=0.849) total time= 4.8min
+[CV 3/5] END batch_size=1000;, score=(train=0.828, test=0.813) total time= 3.4min
+[CV 3/5] END batch_size=500;, score=(train=0.858, test=0.843) total time= 5.1min
+[CV 5/5] END batch_size=1000;, score=(train=0.822, test=0.804) total time= 3.3min
+[CV 1/5] END batch_size=500;, score=(train=0.832, test=0.812) total time= 5.1min
+[CV 4/5] END batch_size=1000;, score=(train=0.852, test=0.835) total time= 3.8min
+[CV 3/5] END ..batch_size=1;, score=(train=0.808, test=0.806) total time=21.6min
+GridSearch completed
+-batch_size GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+[CV 3/5] END learning_rate=adaptive;, score=(train=0.850, test=0.834) total time= 2.9min
+[CV 2/5] END learning_rate=adaptive;, score=(train=0.830, test=0.814) total time= 3.0min
+[CV 5/5] END learning_rate=adaptive;, score=(train=0.861, test=0.846) total time= 3.1min
+[CV 5/5] END ..batch_size=1;, score=(train=0.835, test=0.835) total time=23.2min
+[CV 3/5] END learning_rate=invscaling;, score=(train=0.879, test=0.862) total time= 3.3min
+GridSearch completed
+-learning_rate GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 3 candidates, totalling 15 fits
+[CV 4/5] END learning_rate_init=0.1;, score=(train=0.849, test=0.846) total time=  40.5s
+[CV 2/5] END learning_rate_init=0.1;, score=(train=0.695, test=0.699) total time=  40.7s
+[CV 1/5] END learning_rate_init=0.1;, score=(train=0.777, test=0.776) total time=  46.1s
+[CV 3/5] END learning_rate_init=0.1;, score=(train=0.760, test=0.760) total time=  50.2s
+[CV 5/5] END learning_rate_init=0.1;, score=(train=0.743, test=0.742) total time=  54.8s
+[CV 1/5] END learning_rate=adaptive;, score=(train=0.844, test=0.825) total time= 4.9min
+[CV 1/5] END learning_rate_init=0.01;, score=(train=0.879, test=0.866) total time= 2.3min
+[CV 4/5] END learning_rate_init=0.01;, score=(train=0.879, test=0.869) total time= 2.8min
+[CV 5/5] END learning_rate_init=0.01;, score=(train=0.875, test=0.863) total time= 2.9min
+GridSearch completed
+-learning_rate_init GridSearch completed!
+Training on Under_Sample_1:1_threshold_20...
+Fitting 5 folds for each of 3 candidates, totalling 15 fits
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/externals/loky/process_executor.py", line 463, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 589, in __call__
+    return [func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 589, in <listcomp>
+    return [func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/utils/parallel.py", line 129, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/model_selection/_validation.py", line 883, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/base.py", line 279, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'ramdom_state' for estimator MLPClassifier(max_iter=1000). Valid parameters are: ['activation', 'alpha', 'batch_size', 'beta_1', 'beta_2', 'early_stopping', 'epsilon', 'hidden_layer_sizes', 'learning_rate', 'learning_rate_init', 'max_fun', 'max_iter', 'momentum', 'n_iter_no_change', 'nesterovs_momentum', 'power_t', 'random_state', 'shuffle', 'solver', 'tol', 'validation_fraction', 'verbose', 'warm_start'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wtmartinez/github/212B-ML-Project/assignment_3/local_dev/GridSearches/taylor_mlp_all.py", line 211, in <module>
+    mlp_gridsearch(pq_jar, unq_names, value, save_pth, key, 16)
+  File "/home/wtmartinez/github/212B-ML-Project/assignment_3/local_dev/GridSearches/taylor_mlp_all.py", line 112, in mlp_gridsearch
+    grid_search.fit(X_train_scaled, y_train)
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/base.py", line 1474, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/model_selection/_search.py", line 970, in fit
+    self._run_search(evaluate_candidates)
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/model_selection/_search.py", line 1527, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/model_selection/_search.py", line 916, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/sklearn/utils/parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 1699, in _retrieve
+    self._raise_error_fast()
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 1734, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 736, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wtmartinez/anaconda3/envs/203C/lib/python3.11/site-packages/joblib/parallel.py", line 754, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'ramdom_state' for estimator MLPClassifier(max_iter=1000). Valid parameters are: ['activation', 'alpha', 'batch_size', 'beta_1', 'beta_2', 'early_stopping', 'epsilon', 'hidden_layer_sizes', 'learning_rate', 'learning_rate_init', 'max_fun', 'max_iter', 'momentum', 'n_iter_no_change', 'nesterovs_momentum', 'power_t', 'random_state', 'shuffle', 'solver', 'tol', 'validation_fraction', 'verbose', 'warm_start'].

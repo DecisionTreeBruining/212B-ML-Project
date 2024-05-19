@@ -1,0 +1,29 @@
+2024-05-18 11:03:44,819 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 11:10:39,758 - INFO - GridSearch for -baseline completed.
+2024-05-18 11:10:39,888 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 11:10:39,916 - INFO - -baseline GridSearch completed!
+2024-05-18 11:10:40,499 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 12:04:03,503 - INFO - GridSearch for _neurons-hidden_layer_sizes completed.
+2024-05-18 12:04:03,821 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 12:04:03,824 - INFO - _neurons-hidden_layer_sizes GridSearch completed!
+2024-05-18 12:04:04,409 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 13:08:36,077 - INFO - GridSearch for _layers-hidden_layer_sizes completed.
+2024-05-18 13:08:36,430 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 13:08:36,433 - INFO - _layers-hidden_layer_sizes GridSearch completed!
+2024-05-18 13:08:37,016 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 13:21:48,543 - INFO - GridSearch for -activation completed.
+2024-05-18 13:21:48,856 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 13:21:48,859 - INFO - -activation GridSearch completed!
+2024-05-18 13:21:49,437 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 13:48:29,298 - INFO - GridSearch for -batch_size completed.
+2024-05-18 13:48:29,424 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 13:48:29,427 - INFO - -batch_size GridSearch completed!
+2024-05-18 13:48:30,005 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 13:57:06,092 - INFO - GridSearch for -learning_rate completed.
+2024-05-18 13:57:06,223 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 13:57:06,226 - INFO - -learning_rate GridSearch completed!
+2024-05-18 13:57:06,815 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-18 14:05:36,061 - INFO - GridSearch for -learning_rate_init completed.
+2024-05-18 14:05:36,187 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/
+2024-05-18 14:05:36,189 - INFO - -learning_rate_init GridSearch completed!
+2024-05-18 14:05:36,771 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
