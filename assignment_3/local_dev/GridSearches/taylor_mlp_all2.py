@@ -104,7 +104,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
 
         # Define GridSearch
         grid_search = GridSearchCV(
-            mlp(max_iter=1000),
+            mlp(max_iter=1000, random_state=212),
             param_grid=param_grid, 
             cv=cv,
             scoring='recall',
