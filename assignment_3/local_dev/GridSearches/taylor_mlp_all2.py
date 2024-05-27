@@ -32,6 +32,12 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         threads = os.cpu_count() - 2
         print(f"Using {threads} CPU threads!")
     
+    ## Ensure log directory exists
+    os.makedirs('./log', exist_ok=True)
+    
+    ## Ensure save path directory exists
+    os.makedirs(save_pth, exist_ok=True)
+    
     ## GridSearch and Results
     for name in unq_names:
         
@@ -98,7 +104,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
 
         # Define GridSearch
         grid_search = GridSearchCV(
-            mlp(max_iter = 1000),
+            mlp(max_iter=1000),
             param_grid=param_grid, 
             cv=cv,
             scoring='recall',
@@ -123,7 +129,15 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         # Storing Results for each parameter combination
         for i in range(len(grid_search.cv_results_['params'])):
             param_combination = grid_search.cv_results_['params'][i]
-            num_params = calculate_mlp_parameters(num_columns, list(param_combination.values()),1)
+            hidden_layer_sizes = param_combination.get('hidden_layer_sizes', ())
+            if isinstance(hidden_layer_sizes, int):
+                hidden_layer_sizes = (hidden_layer_sizes,)
+            elif isinstance(hidden_layer_sizes, tuple):
+                hidden_layer_sizes = hidden_layer_sizes
+            else:
+                hidden_layer_sizes = (int(hidden_layer_sizes),)
+                
+            num_params = calculate_mlp_parameters(num_columns, hidden_layer_sizes, 1)
             recall = grid_search.cv_results_['mean_test_score'][i]
             fit_time = grid_search.cv_results_['mean_fit_time'][i]
             param_results["Dataset_Name"].append(name)
@@ -146,7 +160,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
         test_recall = recall_score(y_test, y_pred_test)
         test_roc_auc = roc_auc_score(y_test, best_model.predict_proba(X_test_scaled)[:, 1])
         test_accuracy = accuracy_score(y_test, y_pred_test)
-        num_params = calculate_mlp_parameters(num_columns, list(grid_search.best_params_.values()),1)
+        num_params = calculate_mlp_parameters(num_columns, best_model.hidden_layer_sizes, 1)
 
         # Save best model as pickle
         with open(f"{save_pth}best_model{test_name}.pkl", 'wb') as file:
@@ -179,7 +193,7 @@ def mlp_gridsearch(lazy_dict, unq_names, param_grid, save_pth, test_name, thread
 # Train and test sets are in MLP_Dataset.
 # Save results and best model to MLP_Results.
 data_pth = "../../../Data/GoogleDrive/MLP_Dataset/"
-save_pth = "../../../Data/GoogleDrive/MLP_Results/parameters/"
+save_pth = "../../../Data/GoogleDrive/MLP_Results/parameters"
 
 # Read in Parquet files in path and add to a LazyFrame dictionary.
 pq_jar = parquet_to_dict(data_pth)
@@ -200,7 +214,7 @@ all_test_parameters = {
         'max_iter': [200],
         'momentum': [0.9],
         'n_iter_no_change': [10]},
-    '_neurons-hidden_layer_sizes': {'hidden_layer_sizes': [(1), (50), (250), (500)]},
+    '_neurons-hidden_layer_sizes': {'hidden_layer_sizes': [(1,), (50,), (250,), (500,)]},
     '_layers-hidden_layer_sizes': {'hidden_layer_sizes': [(100, 100), (100, 100, 100), (100, 100, 100, 100), (100, 100, 100, 100, 100)]},
     '_parmeters-hidden_layer_sizes':{'hidden_layer_sizes': [(65, 65), (53, 53, 54), (47, 46, 46, 46), (42, 42, 42, 41, 42)]}#,
     # '-activation': {'activation': ['identity', 'logistic', 'tanh']},
@@ -226,7 +240,7 @@ def calculate_mlp_parameters(input_size, hidden_sizes, output_size):
     return: 
         num_params: Total number of parameters in the MLP.
     """
-    layer_sizes = [input_size] + hidden_sizes + [output_size]
+    layer_sizes = [input_size] + [int(size) for size in hidden_sizes] + [output_size]
     num_params = 0
 
     for i in range(len(layer_sizes) - 1):
@@ -235,6 +249,7 @@ def calculate_mlp_parameters(input_size, hidden_sizes, output_size):
         num_params += weights + biases
 
     return num_params
+
 
 # Run the model
 for key, value in all_test_parameters.items():
