@@ -100,7 +100,6 @@ app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.panel_sidebar(
             ui.input_action_button("submit", "Submit"),
-            ui.input_checkbox("show_mean", "Show Mean of Population", False),  # Add checkbox here
             ui.input_select("State", "Which state do you live in?", state_list),
             ui.input_select("Sex", "Sex", sex_list),
             ui.input_select("AgeCategory", "Age Group", age_list),
@@ -136,7 +135,8 @@ app_ui = ui.page_fluid(
             ui.input_select("DifficultyErrands", "Difficulty Running Errands", yes_no_list), #checked
             ui.input_select("ChestScan", "Have you ever had a chest scan?", yes_no_list), #checked
             ui.input_select("RaceEthnicityCategory", "Race/Ethnicity Category", race_list), #checked
-            ui.input_select("AlcoholDrinkers", "Alcohol Drinkers", yes_no_list) #checked
+            ui.input_select("AlcoholDrinkers", "Alcohol Drinkers", yes_no_list), #checked
+            ui.input_checkbox("show_mean", "Show Mean of Population", False)  # Add checkbox here
         ),
         ui.panel_main(
             ui.markdown(
@@ -148,6 +148,15 @@ app_ui = ui.page_fluid(
             ui.div(
                 ui.output_plot("risk_score_plot"), 
                 style="height: 500px; width: 100%;"
+            ), #output_plot
+            ui.markdown(
+                """
+                ### Future Age Group Predictions
+                """
+            ),
+            ui.div(
+                ui.output_plot("future_age_group_plot"), 
+                style="height: 500px; width: 100%;"
             ) #output_plot
         )
     ),
@@ -157,10 +166,12 @@ app_ui = ui.page_fluid(
 def server(input, output, session):
     prediction_value = reactive.Value("Submit your information to get the risk score.")
     prediction = reactive.Value(None)
+    generate_plots = reactive.Value(False)
 
     @reactive.Effect
     @reactive.event(input.submit)
     def submit_info():
+        generate_plots.set(True)
         # Collect input data
         input_data = pd.DataFrame([{
             'State': input.State(),
@@ -212,6 +223,7 @@ def server(input, output, session):
     
     @output
     @render.plot
+    @reactive.event(input.submit)
     def risk_score_plot():
         data = pickle_dict['pop_pred_data']
         user = prediction.get()
@@ -230,6 +242,74 @@ def server(input, output, session):
             mean_score = np.mean(data)
             ax.axvline(mean_score, color='blue', linestyle='--', linewidth=2)
             ax.text(mean_score + 1, 0.02, 'Population Mean', color='blue', rotation=90)
+        return fig
+
+    @output
+    @render.plot
+    @reactive.event(input.submit)
+    def future_age_group_plot():
+        age_groups = [
+            'Age 18 to 24', 'Age 25 to 29', 'Age 30 to 34', 
+            'Age 35 to 39', 'Age 40 to 44', 'Age 45 to 49', 
+            'Age 50 to 54', 'Age 55 to 59', 'Age 60 to 64', 
+            'Age 65 to 69', 'Age 70 to 74', 'Age 75 to 79', 
+            'Age 80 or older'
+        ]
+        
+        user_age_group = input.AgeCategory()
+        age_group_start_index = age_groups.index(user_age_group)
+        future_age_groups = age_groups[age_group_start_index:]
+        
+        # Create a dataframe for predictions based on age groups
+        future_data = pd.DataFrame([{
+            'State': input.State(),
+            'Sex': input.Sex(),
+            'PhysicalHealthDays': input.PhysicalHealthDays(),
+            'LastCheckupTime': input.LastCheckupTime(),
+            'ECigaretteUsage': input.ECigaretteUsage(),
+            'PhysicalActivities': input.PhysicalActivities(),
+            'MentalHealthDays': input.MentalHealthDays(),
+            'SleepHours': input.SleepHours(),
+            'RemovedTeeth': input.RemovedTeeth(),
+            'GeneralHealth': input.GeneralHealth(),
+            'HeightInMeters': input.HeightInMeters(),
+            'WeightInKilograms': input.WeightInKilograms(),
+            'SmokerStatus': input.SmokerStatus(),
+            'HIVTesting': input.HIVTesting(),
+            'FluVaxLast12': input.FluVaxLast12(),
+            'PneumoVaxEver': input.PneumoVaxEver(),
+            'TetanusLast10Tdap': input.TetanusLast10Tdap(),
+            'HighRiskLastYear': input.HighRiskLastYear(),
+            'CovidPos': input.CovidPos(),
+            'HadAsthma': input.HadAsthma(),
+            'HadSkinCancer': input.HadSkinCancer(),
+            'HadCOPD': input.HadCOPD(),
+            'HadDepressiveDisorder': input.HadDepressiveDisorder(),
+            'HadKidneyDisease': input.HadKidneyDisease(),
+            'HadArthritis': input.HadArthritis(),
+            'HadDiabetes': input.HadDiabetes(),
+            'DeafOrHardOfHearing': input.DeafOrHardOfHearing(),
+            'BlindOrVisionDifficulty': input.BlindOrVisionDifficulty(),
+            'DifficultyConcentrating': input.DifficultyConcentrating(),
+            'DifficultyWalking': input.DifficultyWalking(),
+            'DifficultyDressingBathing': input.DifficultyDressingBathing(),
+            'DifficultyErrands': input.DifficultyErrands(),
+            'ChestScan': input.ChestScan(),
+            'RaceEthnicityCategory': input.RaceEthnicityCategory(),
+            'AlcoholDrinkers': input.AlcoholDrinkers()
+        }] * len(future_age_groups))
+        
+        future_data['AgeCategory'] = future_age_groups
+        
+        # Make predictions
+        future_data['RiskScore'] = pipeline.predict_proba(future_data)[:, 1] * 100
+        
+        fig, ax = plt.subplots(figsize=(10, 6))
+        sns.lineplot(x=future_age_groups, y=future_data['RiskScore'], marker='o', ax=ax)
+        ax.set_title('Future Age Group Predictions')
+        ax.set_xlabel('Age Group')
+        ax.set_ylabel('Risk Score')
+        plt.xticks(rotation=45)
         return fig
 
 app = App(app_ui, server)
