@@ -1,6 +1,6 @@
 #importing libraries
-from app_tools import parquet_to_dict, pickle_to_dict, load_and_transform_new_data
-import polars as pl # Fast baby
+from assignment_3_tools import 
+import polars as pl
 from shiny import App, render, ui, reactive  # Import Shiny web application framework components
 import shinyswatch  # Import shinyswatch for theming Shiny apps
 import numpy as np  # Import numpy for numerical operations
@@ -15,6 +15,7 @@ from sklearn.model_selection import GridSearchCV  # Import GridSearchCV for hype
 from sklearn.pipeline import Pipeline  # Import Pipeline for building machine learning pipelines
 from sklearn.preprocessing import StandardScaler  # Import StandardScaler for feature scaling
 from sklearn import metrics  # Import metrics module from sklearn
+from sklearn.impute import SimpleImputer  # Import SimpleImputer for handling missing values
 from sklearn.metrics import (  # Import various performance metrics
     make_scorer,
     accuracy_score,
@@ -27,24 +28,6 @@ from sklearn.metrics import (  # Import various performance metrics
     classification_report
 )
 import pickle  # Import pickle for serializing and de-serializing Python objects
-#####
-'''
-Pipeline:
-Import data:
-  Import trained model form a pickle
-  Import the test sets for population comparison
-Plot population:
-  seaborn
-  pyplot
-Get user info
-  Encode
-  Standardize
-  Revert names
-
-'''
-#####
-
-
 
 
 ## Import Data

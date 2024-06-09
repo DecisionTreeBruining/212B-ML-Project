@@ -5,6 +5,7 @@ import polars as pl  # Import polars for handling data in a fast and memory-effi
 from sklearn.compose import ColumnTransformer  # Import ColumnTransformer for preprocessing
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler  # Import encoders and scaler
 from sklearn.model_selection import train_test_split  # Import function to split data into training and test sets
+from sklearn.impute import SimpleImputer  # Import SimpleImputer for handling missing values
 from scipy.sparse import issparse  # Import issparse to check if a matrix is sparse
 
 def parquet_to_dict(path):
@@ -110,10 +111,12 @@ def encode_cvd_var(df):
     # Define the preprocessor
     preprocessor = ColumnTransformer(
         transformers=[
+            ('impute_num', SimpleImputer(strategy='median'), X.select_dtypes(include=['number']).columns),
+            ('impute_cat', SimpleImputer(strategy='most_frequent'), categorical_cols),
             ('onehot', OneHotEncoder(), one_hot_cols),
             ('label', OrdinalEncoder(), ['AgeCategory']),
-        ] + label_encoders
-        , remainder='passthrough'
+        ] + label_encoders,
+        remainder='passthrough'
     )
     
     # Fit the preprocessor on the training data only and transform both
