@@ -226,15 +226,6 @@ def server(input, output, session):
             ax.text(user + 1, 0.02, 'Your Risk of Heart Disease', color='red', rotation=90)
         return fig
 
-        # fig, ax = plt.subplots(figsize=(10, 6))
-        # fig = pickle_dict['pop_plot']
-        # ax = fig.gca()
-        # pred = prediction.get()
-        # if pred is not None:
-        #     ax.axvline(pred, color='red', linestyle='-', linewidth=2)
-        #     ax.text(pred + 1, 0.02, 'You are here', color='red', rotation=90)
-        # return fig
-
 app = App(app_ui, server)
 
 if __name__ == '__main__':
