@@ -4,6 +4,8 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
+import matplotlib.pyplot as plt
+import seaborn as sns
 from shinyswatch import theme
 from app_tools import pickle_to_dict
 import pickle
@@ -142,7 +144,10 @@ app_ui = ui.page_fluid(
                 """
             ),
             ui.output_text_verbatim("txt", placeholder="Risk Score"),
-            ui.output_image("risk_score_plot", width="60%", height="30%") #output_plot
+            ui.div(
+                ui.output_plot("risk_score_plot"), 
+                style="height: 500px; width: 100%;"
+            ) #output_plot
         )
     ),
 )
@@ -150,6 +155,8 @@ app_ui = ui.page_fluid(
 # Server section
 def server(input, output, session):
     prediction_value = reactive.Value("Submit your information to get the risk score.")
+    prediction = reactive.Value(None)
+
     @reactive.Effect
     @reactive.event(input.submit)
     def submit_info():
@@ -193,22 +200,40 @@ def server(input, output, session):
             'AlcoholDrinkers': input.AlcoholDrinkers()
         }])
         # Make prediction
-        prediction = pipeline.predict_proba(input_data)[0][1] * 100
-        prediction_value.set(f"Your risk score for CVD is {prediction:.2f}")
+        pred = pipeline.predict_proba(input_data)[0][1] * 100
+        prediction_value.set(f"Your risk score for CVD is {pred:.2f}")
+        prediction.set(pred)
 
     @output
     @render.text
     def txt():
         return prediction_value.get()
-
+    
     @output
-    @render.image
+    @render.plot
     def risk_score_plot():
-        from pathlib import Path
+        data = pickle_dict['pop_pred_data']
+        user = prediction.get()
 
-        dir = Path(__file__).resolve().parent
-        img = {"src": str(dir / "output.png"), "width": "100%", "height": "100%"}
-        return img
+        fig, ax = plt.subplots(figsize=(10, 6))
+        sns.histplot(data, kde=True, stat='density', ax=ax)
+        ax.set_title('Distribution of Risk Scores')
+        ax.set_xlabel('Risk Score')
+        ax.set_ylabel('Prevalence')
+        ax = fig.gca()
+        if user is not None:
+            ax.axvline(user, color='red', linestyle='-', linewidth=2)
+            ax.text(user + 1, 0.02, 'Your Risk of Heart Disease', color='red', rotation=90)
+        return fig
+
+        # fig, ax = plt.subplots(figsize=(10, 6))
+        # fig = pickle_dict['pop_plot']
+        # ax = fig.gca()
+        # pred = prediction.get()
+        # if pred is not None:
+        #     ax.axvline(pred, color='red', linestyle='-', linewidth=2)
+        #     ax.text(pred + 1, 0.02, 'You are here', color='red', rotation=90)
+        # return fig
 
 app = App(app_ui, server)
 
