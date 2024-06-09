@@ -19,7 +19,7 @@ with open(model_path, 'rb') as file:
 with open('../models/preprocessor.pkl', 'rb') as file:
     preprocessor = pickle.load(file)
 
-with open('../models/standard_scaler.pkl', 'rb') as file:
+with open('../models/scaler.pkl', 'rb') as file:
     standard_scaler = pickle.load(file)
 
 # Define the pipeline
@@ -42,24 +42,29 @@ state_classes = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colo
                  'Virgin Islands']
 
 sex_classes = ['Female', 'Male']
-general_health_classes = ['Very good', 'Excellent', 'Fair', 'Poor', 'Good']
-last_checkup_time_classes = ['Within past year (anytime less than 12 months ago)',
-                             'Within past 2 years (1 year but less than 2 years ago)',
+general_health_classes = ['Poor', 'Fair', 'Good', 
+                          'Very good', 'Excellent']
+last_checkup_time_classes = ['5 or more years ago',
                              'Within past 5 years (2 years but less than 5 years ago)',
-                             '5 or more years ago']
+                             'Within past 2 years (1 year but less than 2 years ago)',
+                             'Within past year (anytime less than 12 months ago)']
 physical_activities_classes = ['No', 'Yes']
-removed_teeth_classes = ['None of them', '1 to 5', '6 or more, but not all', 'All']
+removed_teeth_classes = ['None of them', '1 to 5',
+                         '6 or more, but not all', 'All']
 yes_no_classes = ['No', 'Yes']
 had_diabetes_classes = ['Yes', 'No', 'No, pre-diabetes or borderline diabetes', 'Yes, but only during pregnancy (female)']
-smoker_status_classes = ['Never smoked', 'Current smoker - now smokes some days', 'Former smoker', 'Current smoker - now smokes every day']
-e_cigarette_usage_classes = ['Not at all (right now)', 'Never used e-cigarettes in my entire life',
-                             'Use them every day', 'Use them some days']
+smoker_status_classes = ['Never smoked', 'Former smoker',
+                         'Current smoker - now smokes some days',
+                         'Current smoker - now smokes every day']
+e_cigarette_usage_classes = ['Never used e-cigarettes in my entire life',
+                             'Not at all (right now)',
+                             'Use them some days',
+                             'Use them every day']
 race_ethnicity_category_classes = ['White only, Non-Hispanic', 'Black only, Non-Hispanic',
                                    'Other race only, Non-Hispanic', 'Multiracial, Non-Hispanic', 'Hispanic']
-age_category_classes = ['Age 80 or older', 'Age 55 to 59', 'Age 65 to 69', 'Age 40 to 44',
-                        'Age 75 to 79', 'Age 70 to 74', 'Age 60 to 64', 'Age 50 to 54',
-                        'Age 45 to 49', 'Age 35 to 39', 'Age 30 to 34', 'Age 25 to 29',
-                        'Age 18 to 24']
+age_category_classes = ['Age 18 to 24', 'Age 25 to 29', 'Age 30 to 34', 'Age 35 to 39', 'Age 40 to 44', 
+                        'Age 45 to 49', 'Age 50 to 54', 'Age 55 to 59', 'Age 60 to 64', 'Age 65 to 69', 
+                        'Age 70 to 74', 'Age 75 to 79', 'Age 80 or older']
 tetanus_last_10_classes = ['Yes, received tetanus shot but not sure what type',
                            'No, did not receive any tetanus shot in the past 10 years',
                            'Yes, received Tdap', 'Yes, received tetanus shot, but not Tdap']
@@ -172,9 +177,12 @@ def server(input, output, session):
         }])
 
 
-        # Apply preprocessing and make prediction
-        processed_data = pipeline.transform(input_data)
-        prediction = pipeline.predict_proba(processed_data)[0][1] * 100
+        # Apply preprocessing and scaling
+        processed_data = pipeline.named_steps['preprocessor'].transform(input_data)
+        scaled_data = pipeline.named_steps['scaler'].transform(processed_data)
+
+        # Make prediction
+        prediction = pipeline.named_steps['model'].predict_proba(scaled_data)[0][1] * 100
         return f"Your risk score for CVD is {prediction:.2f}"
 
     @output
