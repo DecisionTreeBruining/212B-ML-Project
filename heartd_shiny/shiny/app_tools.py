@@ -7,6 +7,13 @@ from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler 
 from sklearn.model_selection import train_test_split  # Import function to split data into training and test sets
 from sklearn.impute import SimpleImputer  # Import SimpleImputer for handling missing values
 from scipy.sparse import issparse  # Import issparse to check if a matrix is sparse
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
+from sklearn.compose import ColumnTransformer
+from scipy.sparse import issparse
+import pickle
+
 
 def parquet_to_dict(path):
     """
@@ -44,10 +51,27 @@ def pickle_to_dict(path):
                 pickle_rick[os.path.splitext(filename)[0]] = pickle.load(file)
     return pickle_rick
 
+###
 def encode_cvd_var(df):
+    """
+    Encodes the dataset using one-hot encoding for general categorical columns and 
+    ordinal encoding for specified columns with predefined categories. Splits the data into training and test datasets.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame to encode and split.
+
+    Returns:
+        X_train_encoded (DataFrame): Encoded training features.
+        X_test_encoded (DataFrame): Encoded test features.
+        y_train (Series): Training target variable.
+        y_test (Series): Test target variable.
+    """
+    # Convert health days from float to int if necessary
+    # df['PhysicalHealthDays'] = df['PhysicalHealthDays'].astype(int)
+    # df['MentalHealthDays'] = df['MentalHealthDays'].astype(int)
+    
     # Define the features and target
     X = df.drop('HadHeartDisease', axis=1)
-    y = df['HadHeartDisease']
     y = df['HadHeartDisease'].map({'Yes': 1, 'No': 0})
   
     # Split the data
@@ -72,48 +96,19 @@ def encode_cvd_var(df):
     
     # Define the columns with specific encoding
     comp_labels = {
-        "GeneralHealth": [
-            'Poor', 
-            'Fair', 
-            'Good', 
-            'Very good', 
-            'Excellent'
-        ],
-        "LastCheckupTime": [
-            '5 or more years ago',
-            'Within past 5 years (2 years but less than 5 years ago)',
-            'Within past 2 years (1 year but less than 2 years ago)',
-            'Within past year (anytime less than 12 months ago)'
-        ],
-        "RemovedTeeth": [
-            'None of them', 
-            '1 to 5',
-            '6 or more, but not all', 
-            'All'
-        ],
-        "SmokerStatus": [
-            'Never smoked', 
-            'Former smoker',
-            'Current smoker - now smokes some days',
-            'Current smoker - now smokes every day'
-        ],  
-        "ECigaretteUsage": [
-            'Never used e-cigarettes in my entire life',
-            'Not at all (right now)',
-            'Use them some days',
-            'Use them every day'
-        ]
+        "GeneralHealth": ['Poor', 'Fair', 'Good', 'Very good', 'Excellent'],
+        "LastCheckupTime": ['5 or more years ago', 'Within past 5 years (2 years but less than 5 years ago)', 'Within past 2 years (1 year but less than 2 years ago)', 'Within past year (anytime less than 12 months ago)'],
+        "RemovedTeeth": ['None of them', '1 to 5', '6 or more, but not all', 'All'],
+        "SmokerStatus": ['Never smoked', 'Former smoker', 'Current smoker - now smokes some days', 'Current smoker - now smokes every day'],
+        "ECigaretteUsage": ['Never used e-cigarettes in my entire life', 'Not at all (right now)', 'Use them some days', 'Use them every day']
     }
 
-    label_encoders = [(key + '_label', OrdinalEncoder(categories=[value]), [key]) 
-                      for key, value in comp_labels.items()]
+    label_encoders = [(key + '_label', OrdinalEncoder(categories=[value]), [key]) for key, value in comp_labels.items()]
     
     # Define the preprocessor
     preprocessor = ColumnTransformer(
         transformers=[
-            ('impute_num', SimpleImputer(strategy='median'), X.select_dtypes(include=['number']).columns),
-            ('impute_cat', SimpleImputer(strategy='most_frequent'), categorical_cols),
-            ('onehot', OneHotEncoder(), one_hot_cols),
+            ('onehot', OneHotEncoder(handle_unknown='ignore'), one_hot_cols),
             ('label', OrdinalEncoder(), ['AgeCategory']),
         ] + label_encoders,
         remainder='passthrough'
@@ -123,10 +118,6 @@ def encode_cvd_var(df):
     X_train_encoded = preprocessor.fit_transform(X_train)
     X_test_encoded = preprocessor.transform(X_test)
 
-    # Save the preprocessor
-    with open('../models/preprocessor.pkl', 'wb') as file:
-        pickle.dump(preprocessor, file)
-
     # Handle sparse matrix if necessary
     if issparse(X_train_encoded):
         X_train_encoded = X_train_encoded.toarray()
@@ -134,21 +125,29 @@ def encode_cvd_var(df):
         X_test_encoded = X_test_encoded.toarray()
 
     # Fit and save the StandardScaler on the training data
-    scaler = StandardScaler()
+    scaler = StandardScaler(with_mean=False)
     X_train_encoded = scaler.fit_transform(X_train_encoded)
     X_test_encoded = scaler.transform(X_test_encoded)
-
-    with open('../models/standard_scaler.pkl', 'wb') as file:
-        pickle.dump(scaler, file)
-
+    
     # Convert the array back to DataFrame and specify column names
     X_columns = preprocessor.get_feature_names_out()
     X_train_encoded = pd.DataFrame(X_train_encoded, columns=X_columns, index=X_train.index)
     X_test_encoded = pd.DataFrame(X_test_encoded, columns=X_columns, index=X_test.index)
-    y_train_encoded = pd.DataFrame(y_train)
-    y_test_encoded = pd.DataFrame(y_test)
+    
+    y_train_encoded = pd.DataFrame(y_train, index=X_train.index, columns=["HadHeartDisease"])
+    y_test_encoded = pd.DataFrame(y_test, index=X_test.index, columns=["HadHeartDisease"])
+    
+    # Save the preprocessor and scaler
+    with open('../models/preprocessor.pkl', 'wb') as file:
+        pickle.dump(preprocessor, file)
+    with open('../models/standard_scaler.pkl', 'wb') as file:
+        pickle.dump(scaler, file)
     
     return X_train_encoded, X_test_encoded, y_train_encoded, y_test_encoded
+
+
+
+###
 
 def load_and_transform_new_data(new_data):
     """
