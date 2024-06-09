@@ -1,0 +1,16 @@
+2024-05-21 12:58:20,828 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-21 13:06:27,363 - INFO - GridSearch for -baseline completed.
+2024-05-21 13:06:27,492 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/parameters
+2024-05-21 13:06:27,518 - INFO - -baseline GridSearch completed!
+2024-05-21 13:06:28,224 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-21 14:00:23,671 - INFO - GridSearch for _neurons-hidden_layer_sizes completed.
+2024-05-21 14:00:23,992 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/parameters
+2024-05-21 14:00:23,995 - INFO - _neurons-hidden_layer_sizes GridSearch completed!
+2024-05-21 14:00:24,574 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-21 15:04:51,997 - INFO - GridSearch for _layers-hidden_layer_sizes completed.
+2024-05-21 15:04:52,292 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/parameters
+2024-05-21 15:04:52,295 - INFO - _layers-hidden_layer_sizes GridSearch completed!
+2024-05-21 15:04:52,894 - INFO - Processing dataset: Under_Sample_1:1_threshold_20
+2024-05-21 15:34:54,522 - INFO - GridSearch for _parmeters-hidden_layer_sizes completed.
+2024-05-21 15:34:54,669 - INFO - Model saved to ../../../Data/GoogleDrive/MLP_Results/parameters
+2024-05-21 15:34:54,672 - INFO - _parmeters-hidden_layer_sizes GridSearch completed!
