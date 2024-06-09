@@ -100,6 +100,7 @@ app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.panel_sidebar(
             ui.input_action_button("submit", "Submit"),
+            ui.input_checkbox("show_mean", "Show Mean of Population", False),  # Add checkbox here
             ui.input_select("State", "Which state do you live in?", state_list),
             ui.input_select("Sex", "Sex", sex_list),
             ui.input_select("AgeCategory", "Age Group", age_list),
@@ -135,8 +136,7 @@ app_ui = ui.page_fluid(
             ui.input_select("DifficultyErrands", "Difficulty Running Errands", yes_no_list), #checked
             ui.input_select("ChestScan", "Have you ever had a chest scan?", yes_no_list), #checked
             ui.input_select("RaceEthnicityCategory", "Race/Ethnicity Category", race_list), #checked
-            ui.input_select("AlcoholDrinkers", "Alcohol Drinkers", yes_no_list), #checked
-            ui.input_checkbox("show_mean", "Show Mean of Population", False)  # Add checkbox here
+            ui.input_select("AlcoholDrinkers", "Alcohol Drinkers", yes_no_list) #checked
         ),
         ui.panel_main(
             ui.markdown(
@@ -223,7 +223,6 @@ def server(input, output, session):
     
     @output
     @render.plot
-    @reactive.event(input.submit)
     def risk_score_plot():
         data = pickle_dict['pop_pred_data']
         user = prediction.get()
@@ -246,7 +245,6 @@ def server(input, output, session):
 
     @output
     @render.plot
-    @reactive.event(input.submit)
     def future_age_group_plot():
         age_groups = [
             'Age 18 to 24', 'Age 25 to 29', 'Age 30 to 34', 
