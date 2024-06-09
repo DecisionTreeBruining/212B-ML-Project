@@ -100,7 +100,7 @@ app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.panel_sidebar(
             ui.input_action_button("submit", "Submit"),
-                        ui.input_checkbox("show_mean", "Show Mean of Population", False),  # Add checkbox here
+            ui.input_checkbox("show_mean", "Show Mean of Population", False),  # Add checkbox here
             ui.input_select("State", "Which state do you live in?", state_list),
             ui.input_select("Sex", "Sex", sex_list),
             ui.input_select("AgeCategory", "Age Group", age_list),
