@@ -1,20 +1,21 @@
 #importing libraries
-
-from shiny import App, render, ui,reactive
-import shinyswatch
-import numpy as np
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn import metrics
-from sklearn.metrics import (
+from app_tools import parquet_to_dict, pickle_to_dict, load_and_transform_new_data
+import polars as pl # Fast baby
+from shiny import App, render, ui, reactive  # Import Shiny web application framework components
+import shinyswatch  # Import shinyswatch for theming Shiny apps
+import numpy as np  # Import numpy for numerical operations
+import pandas as pd  # Import pandas for data manipulation and analysis
+import seaborn as sns  # Import seaborn for statistical data visualization
+import matplotlib.pyplot as plt  # Import matplotlib for plotting graphs
+from sklearn.compose import ColumnTransformer  # Import ColumnTransformer for preprocessing
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder  # Import encoders for categorical variables
+from sklearn.linear_model import LogisticRegression  # Import logistic regression model
+from sklearn.model_selection import train_test_split  # Import function to split data into train and test sets
+from sklearn.model_selection import GridSearchCV  # Import GridSearchCV for hyperparameter tuning
+from sklearn.pipeline import Pipeline  # Import Pipeline for building machine learning pipelines
+from sklearn.preprocessing import StandardScaler  # Import StandardScaler for feature scaling
+from sklearn import metrics  # Import metrics module from sklearn
+from sklearn.metrics import (  # Import various performance metrics
     make_scorer,
     accuracy_score,
     confusion_matrix,
@@ -25,10 +26,39 @@ from sklearn.metrics import (
     roc_auc_score,
     classification_report
 )
-import pickle
+import pickle  # Import pickle for serializing and de-serializing Python objects
+#####
+'''
+Pipeline:
+Import data:
+  Import trained model form a pickle
+  Import the test sets for population comparison
+Plot population:
+  seaborn
+  pyplot
+Get user info
+  Encode
+  Standardize
+  Revert names
 
-# loading the model
-# logit_model = pd.read_pickle('models/logit_model_full.pkl')
+'''
+#####
+
+
+
+
+## Import Data
+with open('../models/best_model.pkl', 'rb') as file:  # Open the file in read-binary mode
+    model = pickle.load(file)
+
+X_test = pl.scan_csv('../models/df_heart_drop_20_imp_X_test.parquet')
+y_test = pl.scan_csv('../models/df_heart_drop_20_imp_y_test.parquet')
+
+
+
+
+
+
 
 # UI section starts from here 
 app_ui = ui.page_fluid(
