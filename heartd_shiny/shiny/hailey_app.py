@@ -11,11 +11,24 @@ file_path = "../../Data/heart_2022_with_nans.csv"
 df = pd.read_csv(file_path)
 
 # Load the model
-model_path = "../../Data/GoogleDrive/MLP_Results/best_model_best_params-Under_Sample_1:1_threshold_20.pkl"
+#model_path = "../../Data/GoogleDrive/MLP_Results/best_model_best_params-Under_Sample_1:1_threshold_20.pkl"
+model_path = "../models/best_model.pkl"
 with open(model_path, 'rb') as file:
     best_model = pickle.load(file)
+
+with open('../models/preprocessor.pkl', 'rb') as file:
+    preprocessor = pickle.load(file)
+
+with open('../models/standard_scaler.pkl', 'rb') as file:
+    standard_scaler = pickle.load(file)
+
+# Define the pipeline
+pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('scaler', standard_scaler),
+    ('model', best_model)
+])
   
-# Load the preprocesssor
 
 # UI section starts from here 
 app_ui = ui.page_fluid(
@@ -152,7 +165,7 @@ def server(input, output, session):
         }])
 
         # Make prediction
-        prediction = best_model.predict_proba(input_data)[0][1] * 100
+        prediction = pipeline.predict_proba(input_data)[0][1] * 100
         return f"Your risk score for CVD is {prediction:.2f}"
 
     @output
